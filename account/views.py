@@ -9,10 +9,6 @@ from django.contrib import messages
 from django.contrib.auth import authenticate, login, logout
 
 
-def home(request):
-    pass
-    # return render(request,'dashboard.html')
-
 #Registration
 def register(request):
     form = CreateUserForm()
@@ -53,29 +49,25 @@ def logoutUser(request):
 def forgotPassword(request):
     pass
 
-
+#Add_Battery_details
 def batteryDetails(request):
-    # fm = BatteryDetailsFrom()
     if request.method == 'POST':
         fm = BatteryDetailsFrom(request.POST)
         if fm.is_valid():
             fm.save()
         fm = BatteryDetailsFrom()
-        # else:
-        #     messages.info(request, "Unable to Submit Data")
     else:
         fm = BatteryDetailsFrom()
     context = {'submit_data': fm }
     return render(request,'dashboard.html', context)
 
-
+#Get_Battery_details
 def getBatteryDetails(request):
     if request.method == "GET":
         data = BatteryDetail.objects.values()
-    
     context = {'battery_data': data }
     return render(request, 'battery_details.html',context)
 
-
+#Update_Battery_details
 def updateBattery(request):
     pass
