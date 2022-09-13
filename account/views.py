@@ -13,12 +13,6 @@ def home(request):
     pass
     # return render(request,'dashboard.html')
 
-def products(request):
-    return render(request,'product.html')
-
-def customer(request):
-    return render(request,'customer.html')
-
 #Registration
 def register(request):
     form = CreateUserForm()
