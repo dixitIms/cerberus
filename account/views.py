@@ -3,7 +3,7 @@ from django.shortcuts import render, redirect
 from django.http import HttpResponse, HttpResponseRedirect
 from django.contrib.auth.forms import AuthenticationForm
 
-from .forms import CreateUserForm , BatteryDetailsFrom
+from .forms import CreateUserForm,BatteryDetailsFrom
 from .models import *
 from django.contrib import messages
 from django.contrib.auth import authenticate, login, logout
@@ -55,24 +55,23 @@ def forgotPassword(request):
 
 
 def batteryDetails(request):
-    fm = BatteryDetailsFrom()
+    # fm = BatteryDetailsFrom()
     if request.method == 'POST':
         fm = BatteryDetailsFrom(request.POST)
         if fm.is_valid():
-            print("IN THIS CONDITON============>>>>>>>>>>>>>>")
             fm.save()
-            print(fm, "===========><><><><><>")
         fm = BatteryDetailsFrom()
         # else:
         #     messages.info(request, "Unable to Submit Data")
-    context = {'form': fm }
+    else:
+        fm = BatteryDetailsFrom()
+    context = {'submit_data': fm }
     return render(request,'dashboard.html', context)
 
 
 def getBatteryDetails(request):
     if request.method == "GET":
         data = BatteryDetail.objects.values()
-        print(data, "========>>>DATAA")
     
     context = {'battery_data': data }
     return render(request, 'battery_details.html',context)

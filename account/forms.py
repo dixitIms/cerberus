@@ -26,6 +26,5 @@ class BatteryDetailsFrom(forms.ModelForm):
         super(BatteryDetailsFrom,self).__init__(*args, **kwargs)
         self.fields['status'].empty_label = "Select"
         self.fields['model_name'].empty_label = "Select"
-        self.fields['battery_type'].empty_label = "Select"
-        
+        self.fields['bms_type'].empty_label = "Select"
         self.fields['battery_serial_num'].required = True

@@ -25,8 +25,8 @@
 			<div class="card card-body">
 				<form action="" method="POST">
 					{% csrf_token %}
-					{% for fm in form %}
-						{{fm.label_tag}} {{fm}} {{fm.errors|striptags}} <br><br>
+					{% for data in submit_data %}
+						{{data.label_tag}} {{data}} {{data.errors|striptags}} <br><br>
 					{% endfor %}
 					<input type="Submit" name="Submit">		
 				</form>
