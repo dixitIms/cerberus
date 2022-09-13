@@ -4,7 +4,7 @@
 
 <!-- {% include 'status.html' %} -->
 
-<div class="col-sm-8">    
+<div class="col-sm-8">
     <h4 class="text-center alert alert info">Battery Data</h4>
     <form action="" method="GET">
         {% if battery_data %}
@@ -27,9 +27,11 @@
                         <th scope="col">Battery_pack_nominal_voltage</th>
                         <th scope="col">Battery_pack_nominal_charge_capacity</th>
                         <th scope="col">charging_status</th>
+                        <th scope="col">Action</th>
                         
                       </tr>
                     <tbody>
+    
                     {% for fm in battery_data %}
                       <tr>
                         <th scope="row">1</th>
@@ -46,6 +48,14 @@
                         <td>{{fm.battery_pack_nominal_voltage}}</td>
                         <td>{{fm.battery_pack_nominal_charge_capacity}}</td>
                         <td>{{fm.charging_status}}</td>
+                        <td>
+                          <a href="{% url 'updatedata' fm.battery_serial_num %}" class="btn btn-warning btn-sm">Edit</a>
+                          <!-- <a href="#" class="btn btn-danger btn-sm">DELETE</a> -->
+                          <form action="{% url 'deletedata' fm.battery_serial_num %}" method="POST" class="d-inline">
+                            {% csrf_token %}
+                            <input type="submit" class="btn btn-danger" value="Delete">
+                          </form>
+                        </td>
                       </tr>
                       {% endfor %}
                       <!-- <tr>
@@ -69,6 +79,7 @@
 
         
     </form>
+    
 </div>
 
 

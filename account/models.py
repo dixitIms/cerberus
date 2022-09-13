@@ -21,10 +21,10 @@ MODEL_CHOICES = (
 )
 
 BATTERY_TYPES = (
-    ('1','24'),
-    ('2','48'),
-    ('3','60'),
-    ('4','72'),
+    ('24','24'),
+    ('48','48'),
+    ('60','60'),
+    ('72','72'),
 )
 
 BMS_TYPE = (
@@ -56,11 +56,11 @@ class BatteryDetail(models.Model):
     warrenty_start_date = models.DateTimeField(default=datetime.now,blank=True)
     warrenty_end_date = models.DateTimeField(default=datetime.now,blank=True)
     assigned_owner = models.CharField(max_length=50)
-    status = models.CharField(max_length=50, choices=STATUS)
+    status = models.CharField(max_length=50, choices=STATUS, default='')
     battery_cell_chemistry = models.CharField(max_length=50, default='')
     battery_pack_nominal_voltage = models.CharField(max_length=50, default='')
     battery_pack_nominal_charge_capacity = models.CharField(max_length=50, default='')
-    charging_status = models.CharField(max_length=50, default=False, null=True)
+    charging_status = models.CharField(max_length=50, default='', null=True)
 
 
     def __str__(self):
