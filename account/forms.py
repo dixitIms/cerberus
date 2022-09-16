@@ -1,15 +1,20 @@
 from cProfile import label
 from dataclasses import field, fields
+from pyexpat import model
 from django.forms import ModelForm
-# from django.contrib.auth.forms import UserCreationForm
-from .models import Crmuser,BatteryDetail
+from django.contrib.auth.forms import UserCreationForm, UserChangeForm
+from .models import Crmuser, BatteryDetail
 from django import forms
+from django.contrib.auth import get_user_model
+
+from django.views.generic import CreateView
+from django.forms import ModelForm
 
 
 class CreateUserForm(forms.ModelForm):
     class Meta:
         model = Crmuser
-        fields = ['username','email','contact', 'age','password','password_conformation']
+        fields = ['username','email','contact','password','password_conformation']
 
 class BatteryDetailsFrom(forms.ModelForm):
     class Meta:

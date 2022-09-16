@@ -54,6 +54,12 @@
 			padding: 0 2rem;
 		}
 		.input-group-text {
+			background: #d6b11c !important;
+			color: rgb(21, 20, 20) !important;
+			border: 0 !important;
+			border-radius: 0.25rem 0 0 0.25rem !important;
+		}
+		.input-register-text {
 			background: #e1dedb !important;
 			color: rgb(21, 20, 20) !important;
 			border: 0 !important;
@@ -82,38 +88,39 @@
 						<div class="input-group mb-3">
 							<div class="input-group-append">
 								<span class="input-group-text"><i class="fas fa-user"></i></span>
+								<input type='text' name='username' class="input-register-text" required>
 							</div>
-							{{form.username}}
+
 						</div>
 						<div class="input-group mb-2">
 							<div class="input-group-append">
 								<span class="input-group-text"><i class="fas fa-envelope-square"></i></span>
+								<input type='text' name='email' class="input-register-text" required>
 							</div>
-							{{form.email}}
 						</div>
 						<div class="input-group mb-2">
 							<div class="input-group-append">
 								<span class="input-group-text"><i class="fas fa-key"></i></span>
+								<input type='text' name='contact' class="input-register-text" required>
 							</div>
-							{{form.age}}
 						</div>
-						<div class="input-group mb-2">
+						<!-- <div class="input-group mb-2">
 							<div class="input-group-append">
 								<span class="input-group-text"><i class="fas fa-key"></i></span>
 							</div>
 							{{form.contact}}
+						</div> -->
+						<div class="input-group mb-2">
+							<div class="input-group-append">
+								<span class="input-group-text"><i class="fas fa-key"></i></span>
+								<input type='text' name='password' class="input-register-text" required>
+							</div>
 						</div>
 						<div class="input-group mb-2">
 							<div class="input-group-append">
 								<span class="input-group-text"><i class="fas fa-key"></i></span>
+								<input type='text' name='password_conformation' class="input-register-text" required>
 							</div>
-							{{form.password}}
-						</div>
-						<div class="input-group mb-2">
-							<div class="input-group-append">
-								<span class="input-group-text"><i class="fas fa-key"></i></span>
-							</div>
-							{{form.password_conformation}}
 						</div>
 				   		<div class="d-flex justify-content-center mt-3 login_container">
 				 			<input class="btn login_btn" type="submit" value="Register Account">
@@ -141,10 +148,9 @@
 		var form_fields = document.getElementsByTagName('input')
 		form_fields[1].placeholder='Username..';
 		form_fields[2].placeholder='Email..';
-		form_fields[3].placeholder='Age..';
-		form_fields[4].placeholder='Contact..';
-		form_fields[5].placeholder='Enter password...';
-		form_fields[6].placeholder='Re-enter Password...';
+		form_fields[3].placeholder='Contact..';
+		form_fields[4].placeholder='Enter password...';
+		form_fields[5].placeholder='Re-enter Password...';
 
 
 		for (var field in form_fields){	

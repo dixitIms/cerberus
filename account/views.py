@@ -1,62 +1,92 @@
 from email.message import Message
-from django.shortcuts import render, redirect 
+from django.shortcuts import render, redirect, get_object_or_404
 from django.http import HttpResponse, HttpResponseRedirect
 from django.contrib.auth.forms import AuthenticationForm
 
-from .forms import CreateUserForm,BatteryDetailsFrom
+from .forms import BatteryDetailsFrom
 from .models import *
 from django.contrib import messages
-from django.contrib.auth import authenticate, login, logout
+from django.contrib.auth import logout
+# from django.contrib.auth.models import User
+import psycopg2 as db
+
+uname=''
+em=''
+con=''
+pwd=''
+pwd_con=''
 
 
-#Registration
+#REGISTER
 def register(request):
-    form = CreateUserForm()
-    if request.method == 'POST':
-        form = CreateUserForm(request.POST)
-        if form.is_valid():
-            form.save()
-            user = form.cleaned_data.get('username')
-            messages.success(request, 'Account was cretaed for' + user)
-            return redirect('login') 
-    context = {'form': form }
-    return render(request, 'register.html', context)
+    global uname,em,con,pwd,pwd_con
+    if request.method=="POST":
+        conn=db.connect(host="localhost",user="postgres",password="1234",database='battery_management')
+        cursor=conn.cursor()
+        d=request.POST
+        for key,value in d.items():
+            if key=="username":
+                uname=value
+            if key=="email":
+                em=value
+            if key=="contact":
+                con=value
+            if key=="password":
+                pwd=value
+            if key=="password_conformation":
+                pwd_con=value
+        
+        c="INSERT INTO account_crmuser Values('{}','{}','{}','{}','{}')".format(uname,em,con,pwd,pwd_con)
+        cursor.execute(c)
+        conn.commit()
+        return redirect('login')
 
-#Login    
+    return render(request,'register.html')
+
+em=''
+pwd=''
+#Login
 def loginPage(request):
-	# if request.user.is_authenticated:
-	# 	return redirect('home')
-	# else:
-    if request.method == 'POST':
-        username = request.POST.get('username')
-        password =request.POST.get('password')
-
-        user = authenticate(request, username=username, password=password)
-        if user:
-            login(request, user)
-            return redirect('home') 
+    global em,pwd
+    if request.method=="POST":
+        m=db.connect(host="localhost",user="postgres",password="1234",database='battery_management')
+        cursor=m.cursor()
+        d=request.POST
+        for key,value in d.items():
+            if key=="email":
+                em=value
+            if key=="password":
+                pwd=value
+        
+        c="select * from account_crmuser where email='{}' and password='{}'".format(em,pwd)
+        cursor.execute(c)
+        t=tuple(cursor.fetchall())
+        print(t, "======>>>>>>")
+        if t == ():
+            messages.info(request, "Username or Password Inccorect")
         else:
             return redirect('home')
-            
-    context = {}
-    return render(request, 'login.html', context)
+
+    return render(request,'login.html')
 
 #Logout
 def logoutUser(request):
-	logout(request)
-	return redirect('login')
+    logout(request)
+    return redirect('login')
 
 def forgotPassword(request):
     pass
 
 #Add_Battery_details
 def batteryDetails(request):
-    if request.method == 'POST':
+    if request.method == "POST":
         fm = BatteryDetailsFrom(request.POST)
+        print("Here======>>>>>")
         if fm.is_valid():
             fm.save()
-        fm = BatteryDetailsFrom()
+            fm = BatteryDetailsFrom()
     else:
+        print("ELSE HERE")
         fm = BatteryDetailsFrom()
     context = {'submit_data': fm }
     return render(request,'dashboard.html', context)
@@ -68,6 +98,22 @@ def getBatteryDetails(request):
     context = {'battery_data': data }
     return render(request, 'battery_details.html',context)
 
-#Update_Battery_details
-def updateBattery(request):
-    pass
+#This Function Will Update_Battery_details/Edit
+def updateBatteryDetails(request, id):
+    if request.method == 'POST':
+        pi = BatteryDetail.objects.get(pk=id)
+        fm = BatteryDetailsFrom(request.POST, instance=pi)
+        if fm.is_valid():
+            fm.save()
+    else:
+        pi = BatteryDetail.objects.get(pk=id)
+        fm = BatteryDetailsFrom(instance=pi)
+    return render(request,'update_battery_details.html',{'form': fm})
+    
+
+#Delete_Record
+def deleteRecord(request,id):
+    if request.method == 'POST':
+        pi = BatteryDetail.objects.get(pk=id)
+        pi.delete()
+        return redirect('data')

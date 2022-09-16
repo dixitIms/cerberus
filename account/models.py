@@ -1,18 +1,16 @@
+# Create your models here.
 from django.db import models
 from datetime import datetime
+from django.contrib.auth.models import AbstractUser
 
-# Create your models here.
 
 class Crmuser(models.Model):
-    username = models.CharField(max_length=50, default='')
-    email = models.CharField(max_length=20,default='', primary_key=True)
+    username = models.CharField(max_length=20, default=20)
+    email = models.EmailField(max_length=20,default='', primary_key=True)
     contact = models.CharField(max_length=12, default='')
-    age = models.CharField(max_length=2, default='')
     password = models.CharField(max_length=20,default='')
     password_conformation = models.CharField(max_length=20,default='')
 
-    def __str__(self):
-        return self.username + " " + self.email
 
 MODEL_CHOICES = (
     ('igtblu','IGTBLU'),

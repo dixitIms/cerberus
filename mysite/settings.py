@@ -105,7 +105,6 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-
 # Internationalization
 # https://docs.djangoproject.com/en/2.2/topics/i18n/
 
@@ -137,3 +136,9 @@ EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 EMAIL_HOST_USER = 'dixitjethava1111@gmail.com'
 EMAIL_HOST_PASSWORD = 'dixit@123'
+
+#Authentication backends
+# AUTHENTICATION_BACKENDS = (
+#     'account.auth.EmailBackend',
+# )
+
