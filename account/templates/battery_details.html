@@ -8,7 +8,6 @@
     <h4 class="text-center alert alert info">Battery Data</h4>
     <form action="" method="GET">
         {% if battery_data %}
-            
                 <!-- {{fm.label_tag}} {{fm}} {{fm.errors|striptags}} <br><br> -->
                 <table class="table table-hover">
                     <thead>
@@ -48,11 +47,12 @@
                         <td>{{fm.battery_pack_nominal_voltage}}</td>
                         <td>{{fm.battery_pack_nominal_charge_capacity}}</td>
                         <td>{{fm.charging_status}}</td>
+
                         <td>
                           <a href="{% url 'updatedata' fm.battery_serial_num %}" class="btn btn-warning btn-sm">Edit</a>
-                          <!-- <a href="#" class="btn btn-danger btn-sm">DELETE</a> -->
+                          <!-- <a href="{% url 'deletedata' fm.battery_serial_num %}" class="btn btn-danger btn-sm">DELETE</a> -->
                           <form action="{% url 'deletedata' fm.battery_serial_num %}" method="POST" class="d-inline">
-                            {% csrf_token %}
+                              {% csrf_token %}
                             <input type="submit" class="btn btn-danger" value="Delete">
                           </form>
                         </td>

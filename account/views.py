@@ -1,13 +1,10 @@
 from email.message import Message
 from django.shortcuts import render, redirect, get_object_or_404
 from django.http import HttpResponse, HttpResponseRedirect
-from django.contrib.auth.forms import AuthenticationForm
-
 from .forms import BatteryDetailsFrom
 from .models import *
 from django.contrib import messages
 from django.contrib.auth import logout
-# from django.contrib.auth.models import User
 import psycopg2 as db
 
 uname=''
@@ -83,10 +80,11 @@ def batteryDetails(request):
         fm = BatteryDetailsFrom(request.POST)
         print("Here======>>>>>")
         if fm.is_valid():
+            print("IF FORM IS VALID")
             fm.save()
             fm = BatteryDetailsFrom()
     else:
-        print("ELSE HERE")
+        print("ELSE HERE POST")
         fm = BatteryDetailsFrom()
     context = {'submit_data': fm }
     return render(request,'dashboard.html', context)
@@ -94,7 +92,8 @@ def batteryDetails(request):
 #Get_Battery_details
 def getBatteryDetails(request):
     if request.method == "GET":
-        data = BatteryDetail.objects.values()
+        data = list(BatteryDetail.objects.values())
+        print(data)
     context = {'battery_data': data }
     return render(request, 'battery_details.html',context)
 
@@ -113,7 +112,14 @@ def updateBatteryDetails(request, id):
 
 #Delete_Record
 def deleteRecord(request,id):
-    if request.method == 'POST':
+    print(id,"====IDDDDDDDD")
+    try:
+        print("IN TRY")
         pi = BatteryDetail.objects.get(pk=id)
-        pi.delete()
-        return redirect('data')
+        if request.method == 'POST':
+            pi.delete()
+            return redirect('data')
+        context = {}
+        return render(request, "battery_details.html", context)
+    except Exception as e:
+        print("Error While deleting Record",e)

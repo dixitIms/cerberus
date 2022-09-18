@@ -58,7 +58,7 @@ class BatteryDetail(models.Model):
     battery_cell_chemistry = models.CharField(max_length=50, default='')
     battery_pack_nominal_voltage = models.CharField(max_length=50, default='')
     battery_pack_nominal_charge_capacity = models.CharField(max_length=50, default='')
-    charging_status = models.CharField(max_length=50, default='', null=True)
+    charging_status = models.CharField(max_length=50, default='')
 
 
     def __str__(self):

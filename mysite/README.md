@@ -1,11 +1,21 @@
 # Irasus Web Application
 
+# Require Install
+
+# 1 python3
+# 2 Postgres
+
+# InstallMent
+
+- pip install python3
+
+
 ## Setup
 
 The first thing to do is to clone the repository:
 
 ```
-$ git clone https://github.com/anirudh-ramesh/cerberus.git
+$ git clone https://github.com/dixitIms/cerberus.git
 $ cd mysite
 
 ```
