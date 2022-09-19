@@ -1,7 +1,6 @@
 # Create your models here.
 from django.db import models
-from datetime import datetime
-from django.contrib.auth.models import AbstractUser
+from datetime import date, datetime
 
 
 class Crmuser(models.Model):
@@ -44,15 +43,15 @@ STATUS = (
 )
 
 class BatteryDetail(models.Model):
-    model_name = models.CharField(max_length=100,default='', choices=MODEL_CHOICES)
+    model_name = models.CharField(max_length=100,default='', choices=MODEL_CHOICES, blank=True)
     battery_serial_num = models.CharField(max_length=100, primary_key=True, default='', unique=True)
-    battery_type = models.CharField(max_length=100, default='', unique=True, choices=BATTERY_TYPES)
+    battery_type = models.CharField(max_length=100, default='', choices=BATTERY_TYPES)
     bms_type = models.CharField(max_length=100, default='', choices=BMS_TYPE)
     iot_type = models.CharField(max_length=100, default='', choices=IOT_TYPE)
     iot_imei_number = models.CharField(max_length=1000)
     sim_number = models.CharField(max_length=12, default='', blank=True)
-    warrenty_start_date = models.DateTimeField(default=datetime.now,blank=True)
-    warrenty_end_date = models.DateTimeField(default=datetime.now,blank=True)
+    warrenty_start_date = models.DateField(default='',blank=True)
+    warrenty_duration = models.DateField(default='',blank=True)
     assigned_owner = models.CharField(max_length=50)
     status = models.CharField(max_length=50, choices=STATUS, default='')
     battery_cell_chemistry = models.CharField(max_length=50, default='')
