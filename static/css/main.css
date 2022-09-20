@@ -16,6 +16,7 @@ html {
     padding: 0;
     height: 100%;
     background: whitesmoke !important;
+    
 }
 .user_card {
     width: 350px;
@@ -111,4 +112,13 @@ html {
     justify-content: space-between;
     align-items: center;
     margin: 0 1em;
+}
+select {
+    word-wrap: normal;
+    height: 30px;
+}
+label {
+    display: inline-block;
+    margin: 0.5rem;
+    PADDING: 0 .2EM;
 }
