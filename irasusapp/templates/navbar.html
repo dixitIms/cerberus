@@ -1,3 +1,7 @@
+{% load i18n %}
+
+{% block head_title %}{% trans "Logout" %}{% endblock %}
+
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <a class="navbar-brand" href="#">Navbar</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -16,5 +20,15 @@
         </li>
       </ul>
     </div>
-    <span ><a  class="hello-msg" href="{% url 'logout' %}">Logout</a></span>
+    <div class="text-center">
+      <!-- <h1>{% trans "Sign Out" %}</h1>       -->
+      <form method="post" action="{% url 'logout' %}">
+        {% csrf_token %}
+        {% if redirect_field_value %}
+        <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}"/>
+        {% endif %}
+        <button class="btn btn-light" type="submit">{% trans 'Logout' %}</button>
+      </form>
+      </div>
+    <!-- <span ><a  class="hello-msg" href="{% url 'logout' %}">Logout</a></span> -->
   </nav>

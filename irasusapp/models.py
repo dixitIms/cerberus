@@ -5,7 +5,7 @@ from datetime import date, datetime
 
 class Crmuser(models.Model):
     username = models.CharField(max_length=20, default=20)
-    email = models.EmailField(max_length=20,default='', primary_key=True)
+    email = models.EmailField(max_length=50,default='', primary_key=True)
     contact = models.CharField(max_length=12, default='')
     password = models.CharField(max_length=20,default='')
     password_conformation = models.CharField(max_length=20,default='')

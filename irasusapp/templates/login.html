@@ -53,7 +53,14 @@
 
 				{% for message in messages %}
 					<p id="messages">{{message}}</p>
-				{% endfor %}			
+				{% endfor %}	
+				
+				<!-- <div class="text-center">
+					<h2>Home</h2>
+					<p>Hello {{ user.first_name }}!</p>
+					<p>Your Username : {{ user }}</p>
+					<a class="btn btn-dark" href="{% url 'socialaccount_connections' %}">Settings</a>
+				</div> -->
 		
 				<div class="mt-1">
 					<div class="d-flex flex-content-center links">
@@ -61,6 +68,15 @@
 					</div>
 					<div class="d-flex flex-content-center links">
 						Forgot Password? <a href="{% url 'password_reset' %}" class="ml-2">Reset Password</a>
+					</div>
+					<div class="loginwithgoogle">
+						{% load socialaccount %}	
+						<!-- <h4>Login With Google</h4> -->
+						{% if user.is_authenticated %}
+						<p>Welcome, You are logged in as {{ user.username }}</p>
+						{% else %}
+						<a href="{% provider_login_url 'google' %}">Login With Google</a>
+						{% endif %}
 					</div>
 				</div>
 			</div>

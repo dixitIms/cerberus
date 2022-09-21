@@ -35,7 +35,7 @@ def register(request):
             if key=="password_conformation":
                 pwd_con=value
         
-        c="INSERT INTO account_crmuser Values('{}','{}','{}','{}','{}')".format(uname,em,con,pwd,pwd_con)
+        c="INSERT INTO irasusapp_crmuser Values('{}','{}','{}','{}','{}')".format(uname,em,con,pwd,pwd_con)
         cursor.execute(c)
         conn.commit()
         return redirect('login')
@@ -57,7 +57,7 @@ def loginPage(request):
             if key=="password":
                 pwd=value
         
-        c="select * from account_crmuser where email='{}' and password='{}'".format(em,pwd)
+        c="select * from irasusapp_crmuser where email='{}' and password='{}'".format(em,pwd)
         cursor.execute(c)
         t=tuple(cursor.fetchall())
         print(t, "======>>>>>>")
