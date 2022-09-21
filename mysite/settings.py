@@ -137,12 +137,7 @@ AUTHENTICATION_BACKENDS = [
     'allauth.account.auth_backends.AuthenticationBackend',
 ]
 
-# ACCOUNT_SID = "AC5f23687adc208f00f6ca150e1b7b7651"
-# AUTH_TOKEN = "eb081a6cbb870dcc37947f91b5a4278c"
 
-
-GOOGLE_AUTH_CIENTID = "404847293797-7pmhuanku3flo1jjuo9609otjf9bck0d.apps.googleusercontent.com"
-GOOGLE_SECRET_KEY = "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"
 
 SITE_ID = 1
 
