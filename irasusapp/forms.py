@@ -1,12 +1,13 @@
-from .models import Crmuser, BatteryDetail
+from .models import BatteryDetail, Crmuser
 from django import forms
+from django.contrib.auth.forms import UserCreationForm
 from django.forms import ModelForm
 from django.conf import settings
 
-class CreateUserForm(forms.ModelForm):
+class CreateUserForm(UserCreationForm):
     class Meta:
         model = Crmuser
-        fields = ['username','email','contact','password','password_conformation']
+        fields = ['username','email','contact','password1','password2']
 
 class BatteryDetailsFrom(forms.ModelForm):
     class Meta:

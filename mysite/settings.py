@@ -65,6 +65,7 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'mysite.wsgi.application'
 
+AUTH_USER_MODEL = 'irasusapp.Crmuser'
 
 # Database
 # https://docs.djangoproject.com/en/2.2/ref/settings/#databases

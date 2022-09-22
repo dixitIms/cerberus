@@ -1,72 +1,60 @@
 from email.message import Message
-from random import random
+from datetime import datetime
 from django.shortcuts import render, redirect, get_object_or_404
 from django.http import HttpResponse, HttpResponseRedirect
 # from .mixins import MessageHandler
 from .forms import BatteryDetailsFrom
-from .models import *
+from .models import Crmuser, BatteryDetail, CrmUserManager
 from django.contrib import messages
 from django.contrib.auth import logout
 import psycopg2 as db
-
-uname=''
-em=''
-con=''
-pwd=''
-pwd_con=''
+from django.contrib.auth.hashers import make_password, check_password
 
 
-#REGISTER
 def register(request):
-    global uname,em,con,pwd,pwd_con
+    global em,uname,con,pwd,pwd_con,last_login
     if request.method=="POST":
         conn=db.connect(host="localhost",user="postgres",password="1234",database='battery_management')
         cursor=conn.cursor()
         d=request.POST
+        print(d, "=========>><><><><>")
         for key,value in d.items():
-            if key=="username":
-                uname=value
             if key=="email":
                 em=value
+            if key=="username":
+                uname=value
             if key=="contact":
                 con=value
             if key=="password":
-                pwd=value
+                pwd=make_password(value)
             if key=="password_conformation":
-                pwd_con=value
-        
-        c="INSERT INTO irasusapp_crmuser Values('{}','{}','{}','{}','{}')".format(uname,em,con,pwd,pwd_con)
+                pwd_con=make_password(value)
+        print(value, "=====>>>>VALUES")
+        last_login = datetime.now()
+        c="INSERT INTO irasusapp_crmuser Values('{}','{}','{}','{}','{}','{}')".format(em,uname,con,pwd,pwd_con,last_login)
+        print(c)
         cursor.execute(c)
         conn.commit()
         return redirect('login')
 
     return render(request,'register.html')
 
-em=''
-pwd=''
-#Login
 def loginPage(request):
-    global em,pwd
-    if request.method=="POST":
-        m=db.connect(host="localhost",user="postgres",password="1234",database='battery_management')
-        cursor=m.cursor()
-        d=request.POST
-        for key,value in d.items():
-            if key=="email":
-                em=value
-            if key=="password":
-                pwd=value
-        
-        c="select * from irasusapp_crmuser where email='{}' and password='{}'".format(em,pwd)
-        cursor.execute(c)
-        t=tuple(cursor.fetchall())
-        print(t, "======>>>>>>")
-        if t == ():
-            messages.info(request, "Username or Password Inccorect")
+    if request.method == "POST":
+        email = request.POST.get('email')
+        password = request.POST.get('password')
+        crmuser = Crmuser.get_user_by_email(email)
+        if crmuser:
+            flag = check_password(password,crmuser.password)
+            if flag:
+                return redirect('home')
+            else:
+                messages.info(request, "Username or Password Inccorect")
+                # pass
         else:
-            return redirect('home')
+            messages.info(request, "Username or Password Inccorect")
 
-    return render(request,'login.html')
+    return render(request,'login.html')  
 
 #Logout
 def logoutUser(request):

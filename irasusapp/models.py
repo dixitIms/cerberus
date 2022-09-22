@@ -1,14 +1,93 @@
 # Create your models here.
 from django.db import models
 from datetime import date, datetime
+from django.contrib.auth.models import BaseUserManager, AbstractBaseUser
 
 
-class Crmuser(models.Model):
-    username = models.CharField(max_length=20, default=20)
-    email = models.EmailField(max_length=50,default='', primary_key=True)
+class CrmUserManager(BaseUserManager):
+    def create_user(self, email,username,contact, password=None, password_conformation=None):
+        """
+        Creates and saves a superuser with the given email,username,contact
+        and password.
+        """
+        if not email:
+            raise ValueError('Users must have an email address')
+
+        user = self.model(
+            email=self.normalize_email(email),
+            username=username,
+            contact=contact,
+            password=password,
+            password_conformation=password_conformation
+        )
+
+        user.set_password(password)
+        # user.check_password(password)
+        user.save(using=self._db)
+        return user
+
+    def create_superuser(self, email,username,contact, password=None, password_conformation=None):
+        """
+        Creates and saves a superuser with the given email,username,contact
+        and password.
+        """
+        user = self.create_user(
+            email,
+            password=password,
+            username=username,
+            contact=contact,
+            password_conformation=password_conformation
+            
+        )
+        user.is_admin = True
+        user.save(using=self._db)
+        return user
+
+class Crmuser(AbstractBaseUser):
+    email = models.EmailField(
+        verbose_name='email address',
+        max_length=20,
+        unique=True,
+        primary_key=True
+    )
+    username = models.CharField(max_length=100, default='')
     contact = models.CharField(max_length=12, default='')
-    password = models.CharField(max_length=20,default='')
-    password_conformation = models.CharField(max_length=20,default='')
+    password = models.CharField(max_length=100,default='')
+    password_conformation = models.CharField(max_length=100,default='')
+    last_login = models.DateTimeField(default=datetime.now())
+    # is_active = models.BooleanField(default='', blank=True)
+    # is_admin = models.BooleanField(default=False)
+
+    objects = CrmUserManager()
+
+    USERNAME_FIELD = 'email'
+    REQUIRED_FIELDS = ['username', 'contact','password', 'password_conformation']
+
+    def __str__(self):
+        return self.email
+
+    # def has_perm(self, perm, obj=None):
+    #     "Does the user have a specific permission?"
+    #     # Simplest possible answer: Yes, always
+    #     return self.is_admin
+
+    # def has_module_perms(self, app_label):
+    #     "Does the user have permissions to view the app `app_label`?"
+    #     # Simplest possible answer: Yes, always
+    #     return True
+
+    # @property
+    # def is_staff(self):
+    #     "Is the user a member of staff?"
+    #     # Simplest possible answer: All admins are staff
+    #     return self.is_admin
+    
+    @staticmethod
+    def get_user_by_email(email):
+        try:
+            return Crmuser.objects.get(email=email)
+        except:
+            return False  
 
 
 MODEL_CHOICES = (
