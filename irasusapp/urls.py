@@ -10,6 +10,7 @@ urlpatterns= [
         path('logout/', views.logoutUser, name="logout"),
 
     path('', views.batteryDetails, name="home"),
+    path('signin', views.signIn, name='signin'),
     path('getdata/', views.getBatteryDetails, name='data'),
     path('update/<int:id>/', views.updateBatteryDetails, name="updatedata"),
     path('delete/<int:id>/', views.deleteRecord, name="deletedata"),

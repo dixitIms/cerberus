@@ -1,5 +1,7 @@
+from audioop import reverse
 from email.message import Message
 from datetime import datetime
+import re
 from django.shortcuts import render, redirect, get_object_or_404
 from django.http import HttpResponse, HttpResponseRedirect
 # from .mixins import MessageHandler
@@ -9,15 +11,25 @@ from django.contrib import messages
 from django.contrib.auth import logout
 import psycopg2 as db
 from django.contrib.auth.hashers import make_password, check_password
+from .auth_helper import getSignInFlow, getTokenFromCode,getToken,getMsalApp,removeUserAndToken, storeUser
+from .graph_helper import *
 
 
+
+em=''
+uname = ''
+con = ''
+pwd = ''
+pwd_con = ''
+last_login = ''
+is_admin = ''
 def register(request):
-    global em,uname,con,pwd,pwd_con,last_login
+    global em,uname,con,pwd,pwd_con,last_login,is_admin
     if request.method=="POST":
         conn=db.connect(host="localhost",user="postgres",password="1234",database='battery_management')
         cursor=conn.cursor()
         d=request.POST
-        print(d, "=========>><><><><>")
+        
         for key,value in d.items():
             if key=="email":
                 em=value
@@ -29,10 +41,10 @@ def register(request):
                 pwd=make_password(value)
             if key=="password_conformation":
                 pwd_con=make_password(value)
-        print(value, "=====>>>>VALUES")
+        
         last_login = datetime.now()
-        c="INSERT INTO irasusapp_crmuser Values('{}','{}','{}','{}','{}','{}')".format(em,uname,con,pwd,pwd_con,last_login)
-        print(c)
+        is_admin = True
+        c="INSERT INTO irasusapp_crmuser Values('{}','{}','{}','{}','{}','{}','{}')".format(em,uname,con,pwd,pwd_con,last_login,is_admin)   
         cursor.execute(c)
         conn.commit()
         return redirect('login')
@@ -68,13 +80,10 @@ def forgotPassword(request):
 def batteryDetails(request):
     if request.method == "POST":
         fm = BatteryDetailsFrom(request.POST)
-        print("Here======>>>>>")
         if fm.is_valid():
-            print("IF FORM IS VALID")
             fm.save()
             fm = BatteryDetailsFrom()
     else:
-        print("ELSE HERE POST")
         fm = BatteryDetailsFrom()
     context = {'submit_data': fm }
     return render(request,'dashboard.html', context)
@@ -83,7 +92,6 @@ def batteryDetails(request):
 def getBatteryDetails(request):
     if request.method == "GET":
         data = list(BatteryDetail.objects.values())
-        print(data)
     context = {'battery_data': data }
     return render(request, 'battery_details.html',context)
 
@@ -102,9 +110,7 @@ def updateBatteryDetails(request, id):
 
 #Delete_Record
 def deleteRecord(request,id):
-    print(id,"====IDDDDDDDD")
     try:
-        print("IN TRY")
         pi = BatteryDetail.objects.get(pk=id)
         if request.method == 'POST':
             pi.delete()
@@ -130,3 +136,40 @@ def deleteRecord(request,id):
 
 # def userOtp(request):
 #     return render(request, 'otp.html')
+
+
+def home(request):
+    context = intialize_context(request)
+    return render(request, 'dashboard.html',context)
+
+def intialize_context(request):
+    context={}
+    error = request.session.pop('flash_error',None)
+
+    if error != None:
+        context['errors'] = []
+    context['errors'].append(error)
+
+    context['user'] = request.session.get('user',{'is_authenticated':False})
+    return context
+
+def signIn(request):
+    flow = getSignInFlow()
+    try:
+        request.session['auth_flow'] = flow
+        print(request.session['auth_flow'], "AUTH_FLOW")
+        print(flow, "====><><><><><><")
+    except Exception as e:
+        print(e)
+    return HttpResponseRedirect(flow['auth_uri'])
+
+def signOut(request):
+    removeUserAndToken(request)
+    return redirect('login')
+
+def callBack(request):
+    result = getTokenFromCode(request)
+
+    user = get_user(result['access_token'])
+    storeUser(request,user)
+    return redirect('home')
