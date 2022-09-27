@@ -56,7 +56,7 @@ class Crmuser(AbstractBaseUser):
     password_conformation = models.CharField(max_length=100,default='')
     last_login = models.DateTimeField(default=datetime.now())
     # is_active = models.BooleanField(default='', blank=True)
-    is_admin = models.BooleanField(default=False)
+    # is_admin = models.BooleanField(default=False)
 
     objects = CrmUserManager()
 
@@ -143,4 +143,12 @@ class BatteryDetail(models.Model):
         return str(self.model_name)
 
 
-
+class UserPermission(models.Model):
+    email = models.ForeignKey(Crmuser, on_delete=models.CASCADE)
+    role = models.CharField(max_length=100, default='')
+    permission = models.CharField(max_length=225, default='')
+    updated_at = models.DateTimeField(default='')
+    policy = models.CharField(max_length=225,default='')
+    default_permission = models.CharField(max_length=225, default='')
+    def __str__(self):
+        return str(self.email)

@@ -1,11 +1,8 @@
-from audioop import reverse
-from email.message import Message
 from datetime import datetime
-import re
 from django.shortcuts import render, redirect, get_object_or_404
 from django.http import HttpResponse, HttpResponseRedirect
 # from .mixins import MessageHandler
-from .forms import BatteryDetailsFrom
+from .forms import BatteryDetailsFrom, CreateUserForm
 from .models import Crmuser, BatteryDetail, CrmUserManager
 from django.contrib import messages
 from django.contrib.auth import logout
@@ -22,9 +19,9 @@ con = ''
 pwd = ''
 pwd_con = ''
 last_login = ''
-is_admin = ''
+# is_admin = ''
 def register(request):
-    global em,uname,con,pwd,pwd_con,last_login,is_admin
+    global em,uname,con,pwd,pwd_con,last_login
     if request.method=="POST":
         conn=db.connect(host="localhost",user="postgres",password="1234",database='battery_management')
         cursor=conn.cursor()
@@ -43,8 +40,8 @@ def register(request):
                 pwd_con=make_password(value)
         
         last_login = datetime.now()
-        is_admin = True
-        c="INSERT INTO irasusapp_crmuser Values('{}','{}','{}','{}','{}','{}','{}')".format(em,uname,con,pwd,pwd_con,last_login,is_admin)   
+        # is_admin = False
+        c="INSERT INTO irasusapp_crmuser Values('{}','{}','{}','{}','{}','{}')".format(em,uname,con,pwd,pwd_con,last_login)   
         cursor.execute(c)
         conn.commit()
         return redirect('login')
@@ -56,8 +53,11 @@ def loginPage(request):
         email = request.POST.get('email')
         password = request.POST.get('password')
         crmuser = Crmuser.get_user_by_email(email)
+        print(crmuser, "===><><><>>")
         if crmuser:
             flag = check_password(password,crmuser.password)
+            print(password, "PASSWORD")
+            print(flag, "=====><><>>")
             if flag:
                 return redirect('home')
             else:
@@ -169,7 +169,32 @@ def signOut(request):
 
 def callBack(request):
     result = getTokenFromCode(request)
-
     user = get_user(result['access_token'])
     storeUser(request,user)
     return redirect('home')
+
+def userSignin(request):
+    if request.method == "POST":
+        form = CreateUserForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('login')
+    else:
+        CreateUserForm()
+    context = { 'form': form }
+    return render(request, 'login.html', context)
+
+
+def userLogin(request):
+    pass
+ 
+#USERPERMISSIONS ========
+
+# def userPermission(request):
+#     try:
+#         if request.method == "POST":
+#             form = UserPermissionFrom(request.method)
+#             form.is_valid()
+#             form.save()
+#     except Exception as e:
+#         print(e)

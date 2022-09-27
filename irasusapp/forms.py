@@ -1,13 +1,13 @@
-from .models import BatteryDetail, Crmuser
+from .models import BatteryDetail, Crmuser, UserPermission
 from django import forms
 from django.contrib.auth.forms import UserCreationForm
 from django.forms import ModelForm
 from django.conf import settings
 
-class CreateUserForm(UserCreationForm):
+class CreateUserForm(forms.ModelForm):
     class Meta:
         model = Crmuser
-        fields = ['username','email','contact','password1','password2']
+        fields = ['username','email','contact','password','password_conformation']
 
 class BatteryDetailsFrom(forms.ModelForm):
     class Meta:
@@ -27,3 +27,8 @@ class BatteryDetailsFrom(forms.ModelForm):
         self.fields['model_name'].empty_label = "Select"
         self.fields['bms_type'].empty_label = "Select"
         self.fields['battery_serial_num'].required = True
+
+class UserPermissionFrom(forms.ModelForm):
+    class Meta:
+        model = UserPermission
+        fields = ['email', 'role', 'permission', 'updated_at', 'policy', 'default_permission']
