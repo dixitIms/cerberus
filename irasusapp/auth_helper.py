@@ -1,9 +1,8 @@
 import msal
 import json
-import logging 
 
 
-logging.getLogger("msal").setLevel(logging.WARN)
+# logging.getLogger("msal").setLevel(logging.WARN)
 credential = json.load(open('microsoft_config.json', 'r'))
 scopes = credential['scopes']
 print(credential['authority'], "==============")
