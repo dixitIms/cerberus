@@ -39,7 +39,7 @@ class CrmUserManager(BaseUserManager):
             password_conformation=password_conformation
             
         )
-        user.is_admin = True
+        # user.is_admin = True
         user.save(using=self._db)
         return user
 
@@ -56,7 +56,7 @@ class Crmuser(AbstractBaseUser):
     password_conformation = models.CharField(max_length=100,default='')
     last_login = models.DateTimeField(default=datetime.now())
     # is_active = models.BooleanField(default='', blank=True)
-    # is_admin = models.BooleanField(default=False)
+    is_admin = models.BooleanField(default=False)
 
     objects = CrmUserManager()
 
@@ -71,10 +71,10 @@ class Crmuser(AbstractBaseUser):
         # Simplest possible answer: Yes, always
         return self.is_admin
 
-    # def has_module_perms(self, app_label):
-    #     "Does the user have permissions to view the app `app_label`?"
-    #     # Simplest possible answer: Yes, always
-    #     return True
+    def has_module_perms(self, app_label):
+        "Does the user have permissions to view the app `app_label`?"
+        # Simplest possible answer: Yes, always
+        return True
 
     @property
     def is_staff(self):

@@ -19,7 +19,7 @@ con = ''
 pwd = ''
 pwd_con = ''
 last_login = ''
-# is_admin = ''
+is_admin = ''
 def register(request):
     global em,uname,con,pwd,pwd_con,last_login
     if request.method=="POST":
@@ -40,8 +40,8 @@ def register(request):
                 pwd_con=make_password(value)
         
         last_login = datetime.now()
-        # is_admin = False
-        c="INSERT INTO irasusapp_crmuser Values('{}','{}','{}','{}','{}','{}')".format(em,uname,con,pwd,pwd_con,last_login)   
+        is_admin = False
+        c="INSERT INTO irasusapp_crmuser Values('{}','{}','{}','{}','{}','{}','{}')".format(em,uname,con,pwd,pwd_con,last_login,is_admin)   
         cursor.execute(c)
         conn.commit()
         return redirect('login')
