@@ -53,11 +53,8 @@ def loginPage(request):
         email = request.POST.get('email')
         password = request.POST.get('password')
         crmuser = Crmuser.get_user_by_email(email)
-        print(crmuser, "===><><><>>")
         if crmuser:
             flag = check_password(password,crmuser.password)
-            print(password, "PASSWORD")
-            print(flag, "=====><><>>")
             if flag:
                 return redirect('home')
             else:
@@ -157,8 +154,6 @@ def signIn(request):
     flow = getSignInFlow()
     try:
         request.session['auth_flow'] = flow
-        print(request.session['auth_flow'], "AUTH_FLOW")
-        print(flow, "====><><><><><><")
     except Exception as e:
         print(e)
     return HttpResponseRedirect(flow['auth_uri'])

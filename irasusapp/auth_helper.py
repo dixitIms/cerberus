@@ -5,7 +5,6 @@ import json
 # logging.getLogger("msal").setLevel(logging.WARN)
 credential = json.load(open('microsoft_config.json', 'r'))
 scopes = credential['scopes']
-print(credential['authority'], "==============")
 
 def loadCache(request):
   # Check for a token cache in the session
@@ -27,17 +26,7 @@ def getMsalApp(cache=None):
     authority=credential['authority'],
     client_credential=credential['app_secret'],
     token_cache=cache)
-  print(auth_app, "AUTHORITYYYYYYY")
   return auth_app
-
-# def getMsalCredential(cache=None):
-#   # Initialize the MSAL confidential client
-#   auth_app = msal.ConfidentialClientApplication(
-#     credential['app_id'],
-#     authority=credential['authority'],
-#     client_credential=credential['app_secret'],
-#     token_cache=cache)
-#   return auth_app
 
 
 def getSignInFlow():

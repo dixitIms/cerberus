@@ -5,11 +5,11 @@ from django.contrib.auth import views as auth_views
 
 urlpatterns= [
         path('register/', views.register, name="register"),
-        path('login/', views.loginPage, name="login"),
+        path('', views.loginPage, name="login"),
         # path('otp/', views.userOtp, name='otp'),
         path('logout/', views.logoutUser, name="logout"),
 
-    path('', views.batteryDetails, name="home"),
+    path('dashboard/', views.batteryDetails, name="home"),
     path('signin', views.signIn, name='signin'),
     path('getdata/', views.getBatteryDetails, name='data'),
     path('update/<int:id>/', views.updateBatteryDetails, name="updatedata"),
