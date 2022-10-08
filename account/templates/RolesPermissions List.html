@@ -1,0 +1,734 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <title>RolesPermissions List</title>
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+      <link rel="stylesheet" href="assets/css/second.css">
+      <script type="text/javascript" src="http://code.jquery.com/jquery-1.10.0.min.js"></script>
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+   
+        <style>
+            body {
+         font-family: "Nunito", sans-serif;
+         font-size: 14px;
+         font-weight: 400;
+         line-height: 18px;
+         color: #222;
+         }
+        </style>
+      <style>
+         @import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@200;400&display=swap');
+      </style>
+          
+      </head>
+   <body class="body">
+      <div class="topbar wf-section">
+         <div class="topbarcontain">
+            <div class="w-hidden-medium w-hidden-small w-hidden-tiny w-row">
+               <div class="topbarleftcol w-column w-col-3">
+              <img class="logo" style="height: 50px" src="assets/img/airtel.svg"> 
+               </div>
+               <div class="w-column w-col-6">
+                  <div class="w-form">
+                     <form id="email-form" name="email-form" data-name="Email Form" method="get" class="form" aria-label="Email Form">
+                        <input type="text" class="searchbar w-input" maxlength="256" name="Searchxxx" data-name="Searchxxx" placeholder="Search by MSISDN,SIM Number,IMSI" id="Searchxxx">
+                     </form>
+                  </div>
+               </div>
+               <div class="topbarrightcolumn w-column w-col-3">
+                  <img class="feather" src="assets/icons/download.svg">
+                  <img class="feather" src="assets/icons/watch.svg">
+                  <img class="feather" src="assets/icons/user.svg">
+               </div>
+            </div>
+         </div>
+      </div>
+      <div class="section wf-section">
+         <div class="pagecontain">
+            <div class="div-block-6">
+               <div class="primary-menu-wrap">
+                  <div class="logo-wrap d-flex"><img class="smalllogo" src="assets/img/airtel.svg" alt="BrandLogo"></div>
+                  <div class="primarymenu-wrap">
+                     <div class="primarymenu above">
+                        <div class="tooltip" tabindex="0">
+                           <div class="primarymenu-icon active" id="section-1"><img src="data:image/svg+xml,%3Csvg width='24' height='24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M12.356 2.963a9.745 9.745 0 018.82 8.82M12.337 7.404a5.315 5.315 0 014.353 4.354' stroke='%23D91B2A' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M15.893 15.377c-.188 0-.384-.06-.572-.103a8.03 8.03 0 01-1.117-.333 1.701 1.701 0 00-2.116.855l-.187.385a10.394 10.394 0 01-2.27-1.71 10.418 10.418 0 01-1.706-2.277l.359-.24a1.71 1.71 0 00.853-2.12 8.858 8.858 0 01-.333-1.122 6.364 6.364 0 01-.102-.581 2.568 2.568 0 00-.888-1.54c-.47-.39-1.062-.6-1.672-.59H3.583a2.553 2.553 0 00-1.945.87 2.569 2.569 0 00-.614 2.047 16.274 16.274 0 004.639 9.464A16.19 16.19 0 0015.117 23h.324A2.555 2.555 0 0018 20.425v-2.567a2.572 2.572 0 00-.61-1.619 2.558 2.558 0 00-1.497-.862zm.426 5.133a.857.857 0 01-.617.824.893.893 0 01-.372.032A14.486 14.486 0 016.895 17.2a14.56 14.56 0 01-4.114-8.48.935.935 0 01.214-.7.853.853 0 01.64-.292h2.559a.851.851 0 01.853.676c.034.234.076.465.128.693.098.451.23.895.392 1.327l-1.194.556a.852.852 0 00-.497.812.857.857 0 00.079.325 12.379 12.379 0 005.971 5.99c.208.085.44.085.649 0a.852.852 0 00.486-.446l.529-1.197c.44.158.89.29 1.348.393.227.052.457.094.69.128a.852.852 0 01.674.856l.017 2.67z' fill='%23121212'/%3E%3C/svg%3E" alt="Voice"></div>
+                           <span class="tooltiptext pos-right">
+                              <div>Voice</div>
+                           </span>
+                        </div>
+                     </div>
+                     <div class="primarymenu below">
+                        <div class="topbarleftcolumn w-col">
+                           <img class="feather" src="assets/icons/user.svg">
+                           <img class="feather" src="assets/icons/download.svg">
+                           <img class="feather" src="assets/icons/watch.svg">
+                           <img class="feather" src="assets/icons/log-out.svg">
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <div class="left-panel-wrap bg-white menubar-tooltipJourney undefined smallmenu">
+                  <div class="menu-toggle-arrow"><img class="feather" src="assets/icons/arrow-left.svg" alt="ArrowLeft">
+                  </div>
+                  <div class="leftmenucontain">
+                     <a href="#" class="leftmenulink w-inline-block">
+                        <div class="w-row">
+                           <div class="w-col w-col-2">
+                              <div class="intext">i</div>
+                           </div>
+                           <div class="w-col w-col-2">
+                              <div class="icontectleft">G</div>
+                           </div>
+                           <div class="w-col w-col-8">
+                              <div class="leftlinktext">Overview</div>
+                           </div>
+                        </div>
+                     </a>
+                     <a href="#" class="leftmenulink w-inline-block">
+                        <div class="w-row">
+                           <div class="w-col w-col-2">
+                              <div class="intext">i</div>
+                           </div>
+                           <div class="w-col w-col-2">
+                              <div class="icontectleft">z</div>
+                           </div>
+                           <div class="w-col w-col-8">
+                              <div class="leftlinktext">Reservation</div>
+                           </div>
+                        </div>
+                     </a>
+                     <a href="#" class="leftmenulink currentlinkleft w-inline-block">
+                        <div class="w-row">
+                           <div class="w-col w-col-2">
+                              <div class="intext">i</div>
+                           </div>
+                           <div class="w-col w-col-2">
+                              <div class="icontectleft">x</div>
+                           </div>
+                           <div class="w-col w-col-8">
+                              <div class="leftlinktext">Meeting</div>
+                           </div>
+                        </div>
+                     </a>
+                     <a href="#" class="leftmenulink w-inline-block">
+                        <div class="w-row">
+                           <div class="w-col w-col-2">
+                              <div class="intext">i</div>
+                           </div>
+                           <div class="w-col w-col-2">
+                              <div class="icontectleft">A</div>
+                           </div>
+                           <div class="w-col w-col-8">
+                              <div class="leftlinktext">Customers</div>
+                           </div>
+                        </div>
+                     </a>
+                     <a href="#" class="leftmenulink w-inline-block">
+                        <div class="w-row">
+                           <div class="w-col w-col-2">
+                              <div class="intext">i</div>
+                           </div>
+                           <div class="w-col w-col-2">
+                              <div class="icontectleft">B</div>
+                           </div>
+                           <div class="w-col w-col-8">
+                              <div class="leftlinktext">Ticket</div>
+                           </div>
+                        </div>
+                     </a>
+                     <a href="#" class="leftmenulink w-inline-block">
+                        <div class="w-row">
+                           <div class="w-col w-col-2">
+                              <div class="intext">i</div>
+                           </div>
+                           <div class="w-col w-col-2">
+                              <div class="icontectleft">C</div>
+                           </div>
+                           <div class="w-col w-col-8">
+                              <div class="leftlinktext">Support</div>
+                           </div>
+                        </div>
+                     </a>
+                     <a href="#" class="leftmenulink w-inline-block">
+                        <div class="w-row">
+                           <div class="w-col w-col-2">
+                              <div class="intext">i</div>
+                           </div>
+                           <div class="w-col w-col-2">
+                              <div class="icontectleft">D</div>
+                           </div>
+                           <div class="w-col w-col-8">
+                              <div class="leftlinktext">Profile</div>
+                           </div>
+                        </div>
+                     </a>
+                     <a href="#" class="leftmenulink leftlogout w-inline-block">
+                        <div class="w-row">
+                           <div class="w-col w-col-2">
+                              <div class="intext">i</div>
+                           </div>
+                           <div class="w-col w-col-2">
+                              <div class="icontectleft">F</div>
+                           </div>
+                           <div class="w-col w-col-8">
+                              <div class="leftlinktext">Log Out</div>
+                           </div>
+                        </div>
+                     </a>
+                  </div>
+               </div>
+              
+           <div class="div-block-7 w-clearfix"> 
+                  <h1 class="meetingsh1">Roles Permissions List</h1>
+                
+                
+                  <div class="card">
+                    <div id="DataTables_Table_0_wrapper" class="dataTables_wrapper dt-bootstrap5 no-footer">
+                       <div class="card-header border-bottom p-1">
+                          
+                          <div class="dt-action-buttons text-end">
+                             <div class="dt-buttons d-inline-flex">
+                                <button class="dt-button buttons-collection btn btn-outline-secondary dropdown-toggle me-2" tabindex="0" aria-controls="DataTables_Table_0" type="button" aria-haspopup="true">
+                                   <span>
+                                      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-share font-small-4 me-50">
+                                         <path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"></path>
+                                         <polyline points="16 6 12 2 8 6"></polyline>
+                                         <line x1="12" y1="2" x2="12" y2="15"></line>
+                                      </svg>
+                                      Export
+                                   </span>
+                                </button>
+                                <button class="dt-button create-new btn btn-primary" tabindex="0" aria-controls="DataTables_Table_0" type="button" data-bs-toggle="modal" data-bs-target="#modals-slide-in">
+                                   <span>
+                                      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-plus me-50 font-small-4">
+                                         <line x1="12" y1="5" x2="12" y2="19"></line>
+                                         <line x1="5" y1="12" x2="19" y2="12"></line>
+                                      </svg>
+                                      Add New Record
+                                   </span>
+                                </button>
+                             </div>
+                          </div>
+                       </div>
+                       <div class="d-flex justify-content-between align-items-center mx-0 row">
+                          <div class="col-sm-12 col-md-6">
+                             <div class="dataTables_length" id="DataTables_Table_0_length">
+                                <label>
+                                   Show 
+                                   <select name="DataTables_Table_0_length" aria-controls="DataTables_Table_0" class="form-select">
+                                      <option value="7">7</option>
+                                      <option value="10">10</option>
+                                      <option value="25">25</option>
+                                      <option value="50">50</option>
+                                      <option value="75">75</option>
+                                      <option value="100">100</option>
+                                   </select>
+                                   entries
+                                </label>
+                             </div>
+                          </div>
+                          <div class="col-sm-12 col-md-6">
+                             <div id="DataTables_Table_0_filter" class="dataTables_filter"><label>Search:<input type="search" class="form-control" placeholder="" aria-controls="DataTables_Table_0"></label></div>
+                          </div>
+                       </div>
+                       <table class="datatables-basic table dataTable no-footer dtr-column" id="DataTables_Table_0" role="grid" aria-describedby="DataTables_Table_0_info" style="width: 100%;">
+                          <thead>
+                             <tr role="row">
+                                <th class="control sorting_disabled" rowspan="1" colspan="1" style="width: 0px; display: none;" aria-label=""></th>
+                                <th class="sorting_disabled dt-checkboxes-cell dt-checkboxes-select-all" rowspan="1" colspan="1" style="width: 25px;" data-col="1" aria-label="">
+                                   <div class="form-check"> <input class="form-check-input" type="checkbox" value="" id="checkboxSelectAll"><label class="form-check-label" for="checkboxSelectAll"></label></div>
+                                </th>
+                                <th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: 339px;" aria-label="Name: activate to sort column ascending">Name</th>
+                                <th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: 325px;" aria-label="Email: activate to sort column ascending">Email</th>
+                                <th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: 103px;" aria-label="Date: activate to sort column ascending">Date</th>
+                                <th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: 97px;" aria-label="Salary: activate to sort column ascending">Salary</th>
+                                <th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: 123px;" aria-label="Status: activate to sort column ascending">Status</th>
+                                <th class="sorting_disabled" rowspan="1" colspan="1" style="width: 92px;" aria-label="Actions">Actions</th>
+                             </tr>
+                          </thead>
+                          <tbody>
+                             <tr class="odd">
+                                <td class=" control" tabindex="0" style="display: none;"></td>
+                                <td class=" dt-checkboxes-cell">
+                                   <div class="form-check"> <input class="form-check-input dt-checkboxes" type="checkbox" value="" id="checkbox100"><label class="form-check-label" for="checkbox100"></label></div>
+                                </td>
+                                <td>
+                                   <div class="d-flex justify-content-left align-items-center">
+                                      <div class="avatar  bg-light-warning  me-1"><span class="avatar-content">GG</span></div>
+                                      <div class="d-flex flex-column"><span class="emp_name text-truncate fw-bold">Glyn Giacoppo</span><small class="emp_post text-truncate text-muted">Software Test Engineer</small></div>
+                                   </div>
+                                </td>
+                                <td>ggiacoppo2r@apache.org</td>
+                                <td>04/15/2017</td>
+                                <td>$24973.48</td>
+                                <td style=""><span class="badge rounded-pill  badge-light-success">Professional</span></td>
+                                <td style="">
+                                   <div class="d-inline-flex">
+                                      <a class="pe-1 dropdown-toggle hide-arrow text-primary" data-bs-toggle="dropdown">
+                                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-more-vertical font-small-4">
+                                            <circle cx="12" cy="12" r="1"></circle>
+                                            <circle cx="12" cy="5" r="1"></circle>
+                                            <circle cx="12" cy="19" r="1"></circle>
+                                         </svg>
+                                      </a>
+                                      <div class="dropdown-menu dropdown-menu-end">
+                                         <a href="javascript:;" class="dropdown-item">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text font-small-4 me-50">
+                                               <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                                               <polyline points="14 2 14 8 20 8"></polyline>
+                                               <line x1="16" y1="13" x2="8" y2="13"></line>
+                                               <line x1="16" y1="17" x2="8" y2="17"></line>
+                                               <polyline points="10 9 9 9 8 9"></polyline>
+                                            </svg>
+                                            Details
+                                         </a>
+                                         <a href="javascript:;" class="dropdown-item">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-archive font-small-4 me-50">
+                                               <polyline points="21 8 21 21 3 21 3 8"></polyline>
+                                               <rect x="1" y="3" width="22" height="5"></rect>
+                                               <line x1="10" y1="12" x2="14" y2="12"></line>
+                                            </svg>
+                                            Archive
+                                         </a>
+                                         <a href="javascript:;" class="dropdown-item delete-record">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-trash-2 font-small-4 me-50">
+                                               <polyline points="3 6 5 6 21 6"></polyline>
+                                               <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path>
+                                               <line x1="10" y1="11" x2="10" y2="17"></line>
+                                               <line x1="14" y1="11" x2="14" y2="17"></line>
+                                            </svg>
+                                            Delete
+                                         </a>
+                                      </div>
+                                   </div>
+                                   <a href="javascript:;" class="item-edit">
+                                      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-edit font-small-4">
+                                         <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path>
+                                         <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path>
+                                      </svg>
+                                   </a>
+                                </td>
+                             </tr>
+                             <tr class="even">
+                                <td class=" control" tabindex="0" style="display: none;"></td>
+                                <td class=" dt-checkboxes-cell">
+                                   <div class="form-check"> <input class="form-check-input dt-checkboxes" type="checkbox" value="" id="checkbox99"><label class="form-check-label" for="checkbox99"></label></div>
+                                </td>
+                                <td>
+                                   <div class="d-flex justify-content-left align-items-center">
+                                      <div class="avatar  me-1"><img src="../../../app-assets/images/avatars/10-small.png" alt="Avatar" width="32" height="32"></div>
+                                      <div class="d-flex flex-column"><span class="emp_name text-truncate fw-bold">Evangelina Carnock</span><small class="emp_post text-truncate text-muted">Cost Accountant</small></div>
+                                   </div>
+                                </td>
+                                <td>ecarnock2q@washington.edu</td>
+                                <td>01/26/2017</td>
+                                <td>$23704.82</td>
+                                <td style=""><span class="badge rounded-pill  badge-light-warning">Resigned</span></td>
+                                <td style="">
+                                   <div class="d-inline-flex">
+                                      <a class="pe-1 dropdown-toggle hide-arrow text-primary" data-bs-toggle="dropdown">
+                                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-more-vertical font-small-4">
+                                            <circle cx="12" cy="12" r="1"></circle>
+                                            <circle cx="12" cy="5" r="1"></circle>
+                                            <circle cx="12" cy="19" r="1"></circle>
+                                         </svg>
+                                      </a>
+                                      <div class="dropdown-menu dropdown-menu-end">
+                                         <a href="javascript:;" class="dropdown-item">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text font-small-4 me-50">
+                                               <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                                               <polyline points="14 2 14 8 20 8"></polyline>
+                                               <line x1="16" y1="13" x2="8" y2="13"></line>
+                                               <line x1="16" y1="17" x2="8" y2="17"></line>
+                                               <polyline points="10 9 9 9 8 9"></polyline>
+                                            </svg>
+                                            Details
+                                         </a>
+                                         <a href="javascript:;" class="dropdown-item">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-archive font-small-4 me-50">
+                                               <polyline points="21 8 21 21 3 21 3 8"></polyline>
+                                               <rect x="1" y="3" width="22" height="5"></rect>
+                                               <line x1="10" y1="12" x2="14" y2="12"></line>
+                                            </svg>
+                                            Archive
+                                         </a>
+                                         <a href="javascript:;" class="dropdown-item delete-record">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-trash-2 font-small-4 me-50">
+                                               <polyline points="3 6 5 6 21 6"></polyline>
+                                               <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path>
+                                               <line x1="10" y1="11" x2="10" y2="17"></line>
+                                               <line x1="14" y1="11" x2="14" y2="17"></line>
+                                            </svg>
+                                            Delete
+                                         </a>
+                                      </div>
+                                   </div>
+                                   <a href="javascript:;" class="item-edit">
+                                      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-edit font-small-4">
+                                         <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path>
+                                         <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path>
+                                      </svg>
+                                   </a>
+                                </td>
+                             </tr>
+                             <tr class="odd">
+                                <td class=" control" tabindex="0" style="display: none;"></td>
+                                <td class=" dt-checkboxes-cell">
+                                   <div class="form-check"> <input class="form-check-input dt-checkboxes" type="checkbox" value="" id="checkbox98"><label class="form-check-label" for="checkbox98"></label></div>
+                                </td>
+                                <td>
+                                   <div class="d-flex justify-content-left align-items-center">
+                                      <div class="avatar  me-1"><img src="../../../app-assets/images/avatars/7-small.png" alt="Avatar" width="32" height="32"></div>
+                                      <div class="d-flex flex-column"><span class="emp_name text-truncate fw-bold">Olivette Gudgin</span><small class="emp_post text-truncate text-muted">Paralegal</small></div>
+                                   </div>
+                                </td>
+                                <td>ogudgin2p@gizmodo.com</td>
+                                <td>04/09/2019</td>
+                                <td>$15211.60</td>
+                                <td style=""><span class="badge rounded-pill  badge-light-success">Professional</span></td>
+                                <td style="">
+                                   <div class="d-inline-flex">
+                                      <a class="pe-1 dropdown-toggle hide-arrow text-primary" data-bs-toggle="dropdown">
+                                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-more-vertical font-small-4">
+                                            <circle cx="12" cy="12" r="1"></circle>
+                                            <circle cx="12" cy="5" r="1"></circle>
+                                            <circle cx="12" cy="19" r="1"></circle>
+                                         </svg>
+                                      </a>
+                                      <div class="dropdown-menu dropdown-menu-end">
+                                         <a href="javascript:;" class="dropdown-item">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text font-small-4 me-50">
+                                               <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                                               <polyline points="14 2 14 8 20 8"></polyline>
+                                               <line x1="16" y1="13" x2="8" y2="13"></line>
+                                               <line x1="16" y1="17" x2="8" y2="17"></line>
+                                               <polyline points="10 9 9 9 8 9"></polyline>
+                                            </svg>
+                                            Details
+                                         </a>
+                                         <a href="javascript:;" class="dropdown-item">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-archive font-small-4 me-50">
+                                               <polyline points="21 8 21 21 3 21 3 8"></polyline>
+                                               <rect x="1" y="3" width="22" height="5"></rect>
+                                               <line x1="10" y1="12" x2="14" y2="12"></line>
+                                            </svg>
+                                            Archive
+                                         </a>
+                                         <a href="javascript:;" class="dropdown-item delete-record">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-trash-2 font-small-4 me-50">
+                                               <polyline points="3 6 5 6 21 6"></polyline>
+                                               <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path>
+                                               <line x1="10" y1="11" x2="10" y2="17"></line>
+                                               <line x1="14" y1="11" x2="14" y2="17"></line>
+                                            </svg>
+                                            Delete
+                                         </a>
+                                      </div>
+                                   </div>
+                                   <a href="javascript:;" class="item-edit">
+                                      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-edit font-small-4">
+                                         <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path>
+                                         <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path>
+                                      </svg>
+                                   </a>
+                                </td>
+                             </tr>
+                             <tr class="even">
+                                <td class=" control" tabindex="0" style="display: none;"></td>
+                                <td class=" dt-checkboxes-cell">
+                                   <div class="form-check"> <input class="form-check-input dt-checkboxes" type="checkbox" value="" id="checkbox97"><label class="form-check-label" for="checkbox97"></label></div>
+                                </td>
+                                <td>
+                                   <div class="d-flex justify-content-left align-items-center">
+                                      <div class="avatar  bg-light-dark  me-1"><span class="avatar-content">RP</span></div>
+                                      <div class="d-flex flex-column"><span class="emp_name text-truncate fw-bold">Reina Peckett</span><small class="emp_post text-truncate text-muted">Quality Control Specialist</small></div>
+                                   </div>
+                                </td>
+                                <td>rpeckett2o@timesonline.co.uk</td>
+                                <td>05/20/2018</td>
+                                <td>$16619.40</td>
+                                <td style=""><span class="badge rounded-pill  badge-light-warning">Resigned</span></td>
+                                <td style="">
+                                   <div class="d-inline-flex">
+                                      <a class="pe-1 dropdown-toggle hide-arrow text-primary" data-bs-toggle="dropdown">
+                                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-more-vertical font-small-4">
+                                            <circle cx="12" cy="12" r="1"></circle>
+                                            <circle cx="12" cy="5" r="1"></circle>
+                                            <circle cx="12" cy="19" r="1"></circle>
+                                         </svg>
+                                      </a>
+                                      <div class="dropdown-menu dropdown-menu-end">
+                                         <a href="javascript:;" class="dropdown-item">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text font-small-4 me-50">
+                                               <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                                               <polyline points="14 2 14 8 20 8"></polyline>
+                                               <line x1="16" y1="13" x2="8" y2="13"></line>
+                                               <line x1="16" y1="17" x2="8" y2="17"></line>
+                                               <polyline points="10 9 9 9 8 9"></polyline>
+                                            </svg>
+                                            Details
+                                         </a>
+                                         <a href="javascript:;" class="dropdown-item">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-archive font-small-4 me-50">
+                                               <polyline points="21 8 21 21 3 21 3 8"></polyline>
+                                               <rect x="1" y="3" width="22" height="5"></rect>
+                                               <line x1="10" y1="12" x2="14" y2="12"></line>
+                                            </svg>
+                                            Archive
+                                         </a>
+                                         <a href="javascript:;" class="dropdown-item delete-record">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-trash-2 font-small-4 me-50">
+                                               <polyline points="3 6 5 6 21 6"></polyline>
+                                               <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path>
+                                               <line x1="10" y1="11" x2="10" y2="17"></line>
+                                               <line x1="14" y1="11" x2="14" y2="17"></line>
+                                            </svg>
+                                            Delete
+                                         </a>
+                                      </div>
+                                   </div>
+                                   <a href="javascript:;" class="item-edit">
+                                      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-edit font-small-4">
+                                         <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path>
+                                         <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path>
+                                      </svg>
+                                   </a>
+                                </td>
+                             </tr>
+                             <tr class="odd">
+                                <td class=" control" tabindex="0" style="display: none;"></td>
+                                <td class=" dt-checkboxes-cell">
+                                   <div class="form-check"> <input class="form-check-input dt-checkboxes" type="checkbox" value="" id="checkbox96"><label class="form-check-label" for="checkbox96"></label></div>
+                                </td>
+                                <td>
+                                   <div class="d-flex justify-content-left align-items-center">
+                                      <div class="avatar  bg-light-dark  me-1"><span class="avatar-content">AB</span></div>
+                                      <div class="d-flex flex-column"><span class="emp_name text-truncate fw-bold">Alaric Beslier</span><small class="emp_post text-truncate text-muted">Tax Accountant</small></div>
+                                   </div>
+                                </td>
+                                <td>abeslier2n@zimbio.com</td>
+                                <td>04/16/2017</td>
+                                <td>$19366.53</td>
+                                <td style=""><span class="badge rounded-pill  badge-light-warning">Resigned</span></td>
+                                <td style="">
+                                   <div class="d-inline-flex">
+                                      <a class="pe-1 dropdown-toggle hide-arrow text-primary" data-bs-toggle="dropdown">
+                                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-more-vertical font-small-4">
+                                            <circle cx="12" cy="12" r="1"></circle>
+                                            <circle cx="12" cy="5" r="1"></circle>
+                                            <circle cx="12" cy="19" r="1"></circle>
+                                         </svg>
+                                      </a>
+                                      <div class="dropdown-menu dropdown-menu-end">
+                                         <a href="javascript:;" class="dropdown-item">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text font-small-4 me-50">
+                                               <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                                               <polyline points="14 2 14 8 20 8"></polyline>
+                                               <line x1="16" y1="13" x2="8" y2="13"></line>
+                                               <line x1="16" y1="17" x2="8" y2="17"></line>
+                                               <polyline points="10 9 9 9 8 9"></polyline>
+                                            </svg>
+                                            Details
+                                         </a>
+                                         <a href="javascript:;" class="dropdown-item">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-archive font-small-4 me-50">
+                                               <polyline points="21 8 21 21 3 21 3 8"></polyline>
+                                               <rect x="1" y="3" width="22" height="5"></rect>
+                                               <line x1="10" y1="12" x2="14" y2="12"></line>
+                                            </svg>
+                                            Archive
+                                         </a>
+                                         <a href="javascript:;" class="dropdown-item delete-record">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-trash-2 font-small-4 me-50">
+                                               <polyline points="3 6 5 6 21 6"></polyline>
+                                               <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path>
+                                               <line x1="10" y1="11" x2="10" y2="17"></line>
+                                               <line x1="14" y1="11" x2="14" y2="17"></line>
+                                            </svg>
+                                            Delete
+                                         </a>
+                                      </div>
+                                   </div>
+                                   <a href="javascript:;" class="item-edit">
+                                      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-edit font-small-4">
+                                         <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path>
+                                         <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path>
+                                      </svg>
+                                   </a>
+                                </td>
+                             </tr>
+                             <tr class="even">
+                                <td class=" control" tabindex="0" style="display: none;"></td>
+                                <td class=" dt-checkboxes-cell">
+                                   <div class="form-check"> <input class="form-check-input dt-checkboxes" type="checkbox" value="" id="checkbox95"><label class="form-check-label" for="checkbox95"></label></div>
+                                </td>
+                                <td>
+                                   <div class="d-flex justify-content-left align-items-center">
+                                      <div class="avatar  me-1"><img src="../../../app-assets/images/avatars/2-small.png" alt="Avatar" width="32" height="32"></div>
+                                      <div class="d-flex flex-column"><span class="emp_name text-truncate fw-bold">Edwina Ebsworth</span><small class="emp_post text-truncate text-muted">Human Resources Assistant</small></div>
+                                   </div>
+                                </td>
+                                <td>eebsworth2m@sbwire.com</td>
+                                <td>09/27/2018</td>
+                                <td>$19586.23</td>
+                                <td style=""><span class="badge rounded-pill badge-light-primary">Current</span></td>
+                                <td style="">
+                                   <div class="d-inline-flex">
+                                      <a class="pe-1 dropdown-toggle hide-arrow text-primary" data-bs-toggle="dropdown">
+                                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-more-vertical font-small-4">
+                                            <circle cx="12" cy="12" r="1"></circle>
+                                            <circle cx="12" cy="5" r="1"></circle>
+                                            <circle cx="12" cy="19" r="1"></circle>
+                                         </svg>
+                                      </a>
+                                      <div class="dropdown-menu dropdown-menu-end">
+                                         <a href="javascript:;" class="dropdown-item">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text font-small-4 me-50">
+                                               <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                                               <polyline points="14 2 14 8 20 8"></polyline>
+                                               <line x1="16" y1="13" x2="8" y2="13"></line>
+                                               <line x1="16" y1="17" x2="8" y2="17"></line>
+                                               <polyline points="10 9 9 9 8 9"></polyline>
+                                            </svg>
+                                            Details
+                                         </a>
+                                         <a href="javascript:;" class="dropdown-item">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-archive font-small-4 me-50">
+                                               <polyline points="21 8 21 21 3 21 3 8"></polyline>
+                                               <rect x="1" y="3" width="22" height="5"></rect>
+                                               <line x1="10" y1="12" x2="14" y2="12"></line>
+                                            </svg>
+                                            Archive
+                                         </a>
+                                         <a href="javascript:;" class="dropdown-item delete-record">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-trash-2 font-small-4 me-50">
+                                               <polyline points="3 6 5 6 21 6"></polyline>
+                                               <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path>
+                                               <line x1="10" y1="11" x2="10" y2="17"></line>
+                                               <line x1="14" y1="11" x2="14" y2="17"></line>
+                                            </svg>
+                                            Delete
+                                         </a>
+                                      </div>
+                                   </div>
+                                   <a href="javascript:;" class="item-edit">
+                                      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-edit font-small-4">
+                                         <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path>
+                                         <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path>
+                                      </svg>
+                                   </a>
+                                </td>
+                             </tr>
+                             <tr class="odd">
+                                <td class=" control" tabindex="0" style="display: none;"></td>
+                                <td class=" dt-checkboxes-cell">
+                                   <div class="form-check"> <input class="form-check-input dt-checkboxes" type="checkbox" value="" id="checkbox94"><label class="form-check-label" for="checkbox94"></label></div>
+                                </td>
+                                <td>
+                                   <div class="d-flex justify-content-left align-items-center">
+                                      <div class="avatar  bg-light-dark  me-1"><span class="avatar-content">RH</span></div>
+                                      <div class="d-flex flex-column"><span class="emp_name text-truncate fw-bold">Ronica Hasted</span><small class="emp_post text-truncate text-muted">Software Consultant</small></div>
+                                   </div>
+                                </td>
+                                <td>rhasted2l@hexun.com</td>
+                                <td>07/04/2019</td>
+                                <td>$24866.66</td>
+                                <td style=""><span class="badge rounded-pill  badge-light-warning">Resigned</span></td>
+                                <td style="">
+                                   <div class="d-inline-flex">
+                                      <a class="pe-1 dropdown-toggle hide-arrow text-primary" data-bs-toggle="dropdown">
+                                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-more-vertical font-small-4">
+                                            <circle cx="12" cy="12" r="1"></circle>
+                                            <circle cx="12" cy="5" r="1"></circle>
+                                            <circle cx="12" cy="19" r="1"></circle>
+                                         </svg>
+                                      </a>
+                                      <div class="dropdown-menu dropdown-menu-end">
+                                         <a href="javascript:;" class="dropdown-item">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text font-small-4 me-50">
+                                               <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                                               <polyline points="14 2 14 8 20 8"></polyline>
+                                               <line x1="16" y1="13" x2="8" y2="13"></line>
+                                               <line x1="16" y1="17" x2="8" y2="17"></line>
+                                               <polyline points="10 9 9 9 8 9"></polyline>
+                                            </svg>
+                                            Details
+                                         </a>
+                                         <a href="javascript:;" class="dropdown-item">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-archive font-small-4 me-50">
+                                               <polyline points="21 8 21 21 3 21 3 8"></polyline>
+                                               <rect x="1" y="3" width="22" height="5"></rect>
+                                               <line x1="10" y1="12" x2="14" y2="12"></line>
+                                            </svg>
+                                            Archive
+                                         </a>
+                                         <a href="javascript:;" class="dropdown-item delete-record">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-trash-2 font-small-4 me-50">
+                                               <polyline points="3 6 5 6 21 6"></polyline>
+                                               <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path>
+                                               <line x1="10" y1="11" x2="10" y2="17"></line>
+                                               <line x1="14" y1="11" x2="14" y2="17"></line>
+                                            </svg>
+                                            Delete
+                                         </a>
+                                      </div>
+                                   </div>
+                                   <a href="javascript:;" class="item-edit">
+                                      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-edit font-small-4">
+                                         <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path>
+                                         <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path>
+                                      </svg>
+                                   </a>
+                                </td>
+                             </tr>
+                          </tbody>
+                       </table>
+                       <div class="d-flex justify-content-between mx-0 row">
+                          <div class="col-sm-12 col-md-6">
+                             <div class="dataTables_info" id="DataTables_Table_0_info" role="status" aria-live="polite">Showing 1 to 7 of 100 entries</div>
+                          </div>
+                          <div class="col-sm-12 col-md-6">
+                             <div class="dataTables_paginate paging_simple_numbers" id="DataTables_Table_0_paginate">
+                                <ul class="pagination">
+                                   <li class="paginate_button page-item previous disabled" id="DataTables_Table_0_previous"><a href="#" aria-controls="DataTables_Table_0" data-dt-idx="0" tabindex="0" class="page-link">&nbsp;</a></li>
+                                   <li class="paginate_button page-item active"><a href="#" aria-controls="DataTables_Table_0" data-dt-idx="1" tabindex="0" class="page-link">1</a></li>
+                                   <li class="paginate_button page-item "><a href="#" aria-controls="DataTables_Table_0" data-dt-idx="2" tabindex="0" class="page-link">2</a></li>
+                                   <li class="paginate_button page-item "><a href="#" aria-controls="DataTables_Table_0" data-dt-idx="3" tabindex="0" class="page-link">3</a></li>
+                                   <li class="paginate_button page-item "><a href="#" aria-controls="DataTables_Table_0" data-dt-idx="4" tabindex="0" class="page-link">4</a></li>
+                                   <li class="paginate_button page-item "><a href="#" aria-controls="DataTables_Table_0" data-dt-idx="5" tabindex="0" class="page-link">5</a></li>
+                                   <li class="paginate_button page-item disabled" id="DataTables_Table_0_ellipsis"><a href="#" aria-controls="DataTables_Table_0" data-dt-idx="6" tabindex="0" class="page-link">…</a></li>
+                                   <li class="paginate_button page-item "><a href="#" aria-controls="DataTables_Table_0" data-dt-idx="7" tabindex="0" class="page-link">15</a></li>
+                                   <li class="paginate_button page-item next" id="DataTables_Table_0_next"><a href="#" aria-controls="DataTables_Table_0" data-dt-idx="8" tabindex="0" class="page-link">&nbsp;</a></li>
+                                </ul>
+                             </div>
+                          </div>
+                       </div>
+                    </div>
+                 </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <script>
+         /* Loop through all dropdown buttons to toggle between hiding and showing its dropdown content - This allows the user to have multiple dropdowns without any conflict */
+         var dropdown = document.getElementsByClassName("template-dropdown-wrap");
+         var i;
+         
+         for (i = 0; i < dropdown.length; i++) {
+           dropdown[i].addEventListener("click", function() {
+             this.classList.toggle("active");
+             var dropdownContent = this.nextElementSibling;
+             if (dropdownContent.style.display === "block") {
+               dropdownContent.style.display = "none";
+             } else {
+               dropdownContent.style.display = "block";
+             }
+           });
+         }
+         
+         
+      </script>
+   </body>
+</html>

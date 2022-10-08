@@ -1,0 +1,1927 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <title>Roles model list</title>
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+      <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
+      <link rel="stylesheet" href="H:/cerberus/static/css/second.css">
+      <link rel="stylesheet" href="{% static '/css/second.css' %}">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+      <style>
+         @import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@200;400&display=swap');
+      </style>
+      <style>/* Document
+         * ========================================================================== */
+         /**
+         * Add border box sizing in all browsers (opinionated).
+         */
+         *,
+         ::before,
+         ::after {
+         box-sizing: border-box;
+         }
+         /**
+         * 1. Add text decoration inheritance in all browsers (opinionated).
+         * 2. Add vertical alignment inheritance in all browsers (opinionated).
+         */
+         ::before,
+         ::after {
+         text-decoration: inherit; /* 1 */
+         vertical-align: inherit; /* 2 */
+         }
+         /**
+         * 1. Use the default cursor in all browsers (opinionated).
+         * 2. Change the line height in all browsers (opinionated).
+         * 3. Use a 4-space tab width in all browsers (opinionated).
+         * 4. Remove the grey highlight on links in iOS (opinionated).
+         * 5. Prevent adjustments of font size after orientation changes in
+         *    IE on Windows Phone and in iOS.
+         * 6. Breaks words to prevent overflow in all browsers (opinionated).
+         */
+         html {
+         cursor: default; /* 1 */
+         line-height: 1.5; /* 2 */
+         -moz-tab-size: 4; /* 3 */
+         tab-size: 4; /* 3 */
+         -webkit-tap-highlight-color: transparent /* 4 */;
+         -ms-text-size-adjust: 100%; /* 5 */
+         -webkit-text-size-adjust: 100%; /* 5 */
+         word-break: break-word; /* 6 */
+         }
+         /* Sections
+         * ========================================================================== */
+         /**
+         * Remove the margin in all browsers (opinionated).
+         */
+         body {
+         margin: 0;
+         }
+         /**
+         * Correct the font size and margin on `h1` elements within `section` and
+         * `article` contexts in Chrome, Edge, Firefox, and Safari.
+         */
+         h1 {
+         font-size: 2em;
+         margin: 0.67em 0;
+         }
+         /* Grouping content
+         * ========================================================================== */
+         /**
+         * Remove the margin on nested lists in Chrome, Edge, IE, and Safari.
+         */
+         dl dl,
+         dl ol,
+         dl ul,
+         ol dl,
+         ul dl {
+         margin: 0;
+         }
+         /**
+         * Remove the margin on nested lists in Edge 18- and IE.
+         */
+         ol ol,
+         ol ul,
+         ul ol,
+         ul ul {
+         margin: 0;
+         }
+         /**
+         * 1. Add the correct sizing in Firefox.
+         * 2. Show the overflow in Edge 18- and IE.
+         */
+         hr {
+         height: 0; /* 1 */
+         overflow: visible; /* 2 */
+         }
+         /**
+         * Add the correct display in IE.
+         */
+         main {
+         display: block;
+         }
+         /**
+         * Remove the list style on navigation lists in all browsers (opinionated).
+         */
+         nav ol,
+         nav ul {
+         list-style: none;
+         padding: 0;
+         }
+         /**
+         * 1. Correct the inheritance and scaling of font size in all browsers.
+         * 2. Correct the odd `em` font sizing in all browsers.
+         */
+         pre {
+         font-family: monospace, monospace; /* 1 */
+         font-size: 1em; /* 2 */
+         }
+         /* Text-level semantics
+         * ========================================================================== */
+         /**
+         * Remove the gray background on active links in IE 10.
+         */
+         a {
+         background-color: transparent;
+         }
+         /**
+         * Add the correct text decoration in Edge 18-, IE, and Safari.
+         */
+         abbr[title] {
+         text-decoration: underline;
+         text-decoration: underline dotted;
+         }
+         /**
+         * Add the correct font weight in Chrome, Edge, and Safari.
+         */
+         b,
+         strong {
+         font-weight: bolder;
+         }
+         /**
+         * 1. Correct the inheritance and scaling of font size in all browsers.
+         * 2. Correct the odd `em` font sizing in all browsers.
+         */
+         code,
+         kbd,
+         samp {
+         font-family: monospace, monospace; /* 1 */
+         font-size: 1em; /* 2 */
+         }
+         /**
+         * Add the correct font size in all browsers.
+         */
+         small {
+         font-size: 80%;
+         }
+         /* Embedded content
+         * ========================================================================== */
+         /*
+         * Change the alignment on media elements in all browsers (opinionated).
+         */
+         audio,
+         canvas,
+         iframe,
+         img,
+         svg,
+         video {
+         vertical-align: middle;
+         }
+         /**
+         * Add the correct display in IE 9-.
+         */
+         audio,
+         video {
+         display: inline-block;
+         }
+         /**
+         * Add the correct display in iOS 4-7.
+         */
+         audio:not([controls]) {
+         display: none;
+         height: 0;
+         }
+         /**
+         * Remove the border on iframes in all browsers (opinionated).
+         */
+         iframe {
+         border-style: none;
+         }
+         /**
+         * Remove the border on images within links in IE 10-.
+         */
+         img {
+         border-style: none;
+         }
+         /**
+         * Change the fill color to match the text color in all browsers (opinionated).
+         */
+         svg:not([fill]) {
+         fill: currentColor;
+         }
+         /**
+         * Hide the overflow in IE.
+         */
+         svg:not(:root) {
+         overflow: hidden;
+         }
+         /* Tabular data
+         * ========================================================================== */
+         /**
+         * Collapse border spacing in all browsers (opinionated).
+         */
+         table {
+         border-collapse: collapse;
+         }
+         /* Forms
+         * ========================================================================== */
+         /**
+         * Remove the margin on controls in Safari.
+         */
+         button,
+         input,
+         select {
+         margin: 0;
+         }
+         /**
+         * 1. Show the overflow in IE.
+         * 2. Remove the inheritance of text transform in Edge 18-, Firefox, and IE.
+         */
+         button {
+         overflow: visible; /* 1 */
+         text-transform: none; /* 2 */
+         }
+         /**
+         * Correct the inability to style buttons in iOS and Safari.
+         */
+         button,
+         [type="button"],
+         [type="reset"],
+         [type="submit"] {
+         -webkit-appearance: button;
+         }
+         /**
+         * 1. Change the inconsistent appearance in all browsers (opinionated).
+         * 2. Correct the padding in Firefox.
+         */
+         fieldset {
+         border: 1px solid #a0a0a0; /* 1 */
+         padding: 0.35em 0.75em 0.625em; /* 2 */
+         }
+         /**
+         * Show the overflow in Edge 18- and IE.
+         */
+         input {
+         overflow: visible;
+         }
+         /**
+         * 1. Correct the text wrapping in Edge 18- and IE.
+         * 2. Correct the color inheritance from `fieldset` elements in IE.
+         */
+         legend {
+         color: inherit; /* 2 */
+         display: table; /* 1 */
+         max-width: 100%; /* 1 */
+         white-space: normal; /* 1 */
+         }
+         /**
+         * 1. Add the correct display in Edge 18- and IE.
+         * 2. Add the correct vertical alignment in Chrome, Edge, and Firefox.
+         */
+         progress {
+         display: inline-block; /* 1 */
+         vertical-align: baseline; /* 2 */
+         }
+         /**
+         * Remove the inheritance of text transform in Firefox.
+         */
+         select {
+         text-transform: none;
+         }
+         /**
+         * 1. Remove the margin in Firefox and Safari.
+         * 2. Remove the default vertical scrollbar in IE.
+         * 3. Change the resize direction in all browsers (opinionated).
+         */
+         textarea {
+         margin: 0; /* 1 */
+         overflow: auto; /* 2 */
+         resize: vertical; /* 3 */
+         }
+         /**
+         * Remove the padding in IE 10-.
+         */
+         [type="checkbox"],
+         [type="radio"] {
+         padding: 0;
+         }
+         /**
+         * 1. Correct the odd appearance in Chrome, Edge, and Safari.
+         * 2. Correct the outline style in Safari.
+         */
+         [type="search"] {
+         -webkit-appearance: textfield; /* 1 */
+         outline-offset: -2px; /* 2 */
+         }
+         /**
+         * Correct the cursor style of increment and decrement buttons in Safari.
+         */
+         ::-webkit-inner-spin-button,
+         ::-webkit-outer-spin-button {
+         height: auto;
+         }
+         /**
+         * Correct the text style of placeholders in Chrome, Edge, and Safari.
+         */
+         ::-webkit-input-placeholder {
+         color: inherit;
+         opacity: 0.54;
+         }
+         /**
+         * Remove the inner padding in Chrome, Edge, and Safari on macOS.
+         */
+         ::-webkit-search-decoration {
+         -webkit-appearance: none;
+         }
+         /**
+         * 1. Correct the inability to style upload buttons in iOS and Safari.
+         * 2. Change font properties to `inherit` in Safari.
+         */
+         ::-webkit-file-upload-button {
+         -webkit-appearance: button; /* 1 */
+         font: inherit; /* 2 */
+         }
+         /**
+         * Remove the inner border and padding of focus outlines in Firefox.
+         */
+         ::-moz-focus-inner {
+         border-style: none;
+         padding: 0;
+         }
+         /**
+         * Restore the focus outline styles unset by the previous rule in Firefox.
+         */
+         :-moz-focusring {
+         outline: 1px dotted ButtonText;
+         }
+         /**
+         * Remove the additional :invalid styles in Firefox.
+         */
+         :-moz-ui-invalid {
+         box-shadow: none;
+         }
+         /* Interactive
+         * ========================================================================== */
+         /*
+         * Add the correct display in Edge 18- and IE.
+         */
+         details {
+         display: block;
+         }
+         /*
+         * Add the correct styles in Edge 18-, IE, and Safari.
+         */
+         dialog {
+         background-color: white;
+         border: solid;
+         color: black;
+         display: block;
+         height: -moz-fit-content;
+         height: -webkit-fit-content;
+         height: fit-content;
+         left: 0;
+         margin: auto;
+         padding: 1em;
+         position: absolute;
+         right: 0;
+         width: -moz-fit-content;
+         width: -webkit-fit-content;
+         width: fit-content;
+         }
+         dialog:not([open]) {
+         display: none;
+         }
+         /*
+         * Add the correct display in all browsers.
+         */
+         summary {
+         display: list-item;
+         }
+         /* Scripting
+         * ========================================================================== */
+         /**
+         * Add the correct display in IE 9-.
+         */
+         canvas {
+         display: inline-block;
+         }
+         /**
+         * Add the correct display in IE.
+         */
+         template {
+         display: none;
+         }
+         /* User interaction
+         * ========================================================================== */
+         /*
+         * 1. Remove the tapping delay in IE 10.
+         * 2. Remove the tapping delay on clickable elements
+         in all browsers (opinionated).
+         */
+         a,
+         area,
+         button,
+         input,
+         label,
+         select,
+         summary,
+         textarea,
+         [tabindex] {
+         -ms-touch-action: manipulation; /* 1 */
+         touch-action: manipulation; /* 2 */
+         }
+         /**
+         * Add the correct display in IE 10-.
+         */
+         [hidden] {
+         display: none;
+         }
+         /* Accessibility
+         * ========================================================================== */
+         /**
+         * Change the cursor on busy elements in all browsers (opinionated).
+         */
+         [aria-busy="true"] {
+         cursor: progress;
+         }
+         /*
+         * Change the cursor on control elements in all browsers (opinionated).
+         */
+         [aria-controls] {
+         cursor: pointer;
+         }
+         /*
+         * Change the cursor on disabled, not-editable, or otherwise
+         * inoperable elements in all browsers (opinionated).
+         */
+         [aria-disabled="true"],
+         [disabled] {
+         cursor: not-allowed;
+         }
+         /*
+         * Change the display on visually hidden accessible elements
+         * in all browsers (opinionated).
+         */
+         [aria-hidden="false"][hidden] {
+         display: initial;
+         }
+         [aria-hidden="false"][hidden]:not(:focus) {
+         clip: rect(0, 0, 0, 0);
+         position: absolute;
+         }
+      </style>
+      <style>.popup {
+         min-height: 100%;
+         display: grid;
+         grid-template-columns: 100%;
+         height: 100vh;
+         grid-template-rows: 100%;
+         background: rgba(112, 112, 112, 0.8);
+         }
+         .popup .close {
+         text-align: right;
+         position: absolute;
+         right: 40px;
+         top: 40px;
+         font-size: 20px;
+         }
+         @media only screen and (max-width: 767px) {
+         .popup .close {
+         right: 30px;
+         top: 30px;
+         }
+         }
+         .popup .close a {
+         color: #000;
+         }
+         .popup .popupwrapper {
+         width: 740px;
+         background: #fff;
+         -ms-flex-item-align: center;
+         align-self: center;
+         justify-self: center;
+         }
+         @media only screen and (max-width: 767px) {
+         .popup .popupwrapper {
+         min-height: 232px;
+         padding: 24px;
+         width: 80%;
+         }
+         }
+         .popup .popupwrapper .popuptext {
+         font-size: 24px;
+         font-weight: 300;
+         letter-spacing: 0.75px;
+         text-align: center;
+         color: #707070;
+         -ms-flex-item-align: center;
+         align-self: center;
+         }
+         @media only screen and (max-width: 767px) {
+         .popup .popupwrapper .popuptext {
+         font-size: 16px;
+         letter-spacing: 0.5px;
+         }
+         }
+         .popup .popupwrapper .popuptext span {
+         color: #000;
+         }
+         .popup .popupwrapper .proceed-btn {
+         text-align: center;
+         -ms-flex-item-align: end;
+         align-self: end;
+         }
+         .popup .popupwrapper input[type="button"] {
+         transition: all 0.7s ease;
+         cursor: pointer;
+         font-weight: 100;
+         display: inline-block;
+         text-align: center;
+         letter-spacing: 0.05em;
+         text-decoration: none;
+         vertical-align: middle;
+         white-space: nowrap;
+         font-size: 16px;
+         padding: 8px 12px;
+         min-width: 160px;
+         line-height: 1.6;
+         max-width: 100%;
+         border: solid 1px transparent;
+         border-radius: 0;
+         background: #f6f6f6;
+         color: #707070;
+         width: 218px;
+         border-radius: 4px;
+         line-height: 2.5;
+         background-color: #E40000;
+         color: #fff;
+         height: 55px;
+         }
+         .popup .popupwrapper input[type="button"]:hover,
+         .popup .popupwrapper input[type="button"]:active {
+         background: #ddd;
+         color: #707070;
+         }
+         .popup .popupwrapper input[type="button"]:focus {
+         outline: none;
+         }
+         @media only screen and (max-width: 767px) {
+         .popup .popupwrapper input[type="button"] {
+         height: 32px;
+         width: 99px;
+         line-height: 1;
+         font-size: 14px;
+         min-width: 99px;
+         }
+         }
+         .popup .popupwrapper input[type="button"]:hover,
+         .popup .popupwrapper input[type="button"]:active {
+         background: #b10000;
+         color: #fff;
+         }
+         .view-details-popup {
+         text-align: left;
+         padding: 40px 50px;
+         letter-spacing: 0.5px;
+         font-weight: 100;
+         color: #707070;
+         position: relative;
+         min-height: 100px;
+         width: 420px;
+         background: #fff;
+         border-radius: 0%;
+         z-index: 9999;
+         top: 50%;
+         left: 50%;
+         -ms-transform: translate(-50%, -50%);
+         -webkit-transform: translate(-50%, -50%);
+         transform: translate(-50%, -50%);
+         }
+         .view-details-popup h2 {
+         font-size: 18px;
+         font-weight: normal;
+         font-stretch: normal;
+         font-style: normal;
+         line-height: normal;
+         letter-spacing: 0.26px;
+         color: #000000;
+         margin-bottom: 16px;
+         font-weight: 600;
+         }
+         .view-details-popup .form-field {
+         margin-bottom: 20px;
+         }
+         .view-details-popup .form-field label {
+         font-size: 14px;
+         font-weight: normal;
+         font-stretch: normal;
+         font-style: normal;
+         line-height: normal;
+         letter-spacing: 0.44px;
+         color: #000000;
+         display: block;
+         margin-bottom: 6px;
+         }
+         .view-details-popup .form-field label.display-inline {
+         display: inline;
+         }
+         .view-details-popup .form-field input[type="text"],
+         .view-details-popup .form-field input[type="number"] {
+         border: solid 1px #d9d9d9;
+         width: 73px;
+         height: 36px;
+         font-size: 14px;
+         }
+         .view-details-popup .form-field textarea {
+         max-width: 461px;
+         width: 100%;
+         height: 83px;
+         border: solid 1px #d9d9d9;
+         }
+         .view-details-popup label {
+         font-size: 14px;
+         font-weight: normal;
+         font-stretch: normal;
+         font-style: normal;
+         line-height: normal;
+         letter-spacing: 0.44px;
+         color: #000000;
+         display: block;
+         }
+         .view-details-popup label.display-inline {
+         display: inline;
+         }
+         .view-details-popup input[type="text"],
+         .view-details-popup input[type="number"] {
+         border: solid 1px #d9d9d9;
+         width: 73px;
+         height: 36px;
+         font-size: 14px;
+         }
+         .view-details-popup .btn {
+         border-radius: 4px;
+         background-color: #e40000;
+         padding: 10px 16px;
+         font-size: 16px;
+         font-weight: normal;
+         font-stretch: normal;
+         font-style: normal;
+         line-height: normal;
+         letter-spacing: normal;
+         text-align: center;
+         color: #ffffff;
+         min-width: auto;
+         }
+         .view-details-popup .btn.red-boder {
+         border: solid 1px #e40000;
+         background: #fff;
+         font-size: 16px;
+         color: #e40000;
+         }
+         .show-popup {
+         display: block !important;
+         visibility: visible
+         }
+         .overlay {
+         position: fixed;
+         width: 100%;
+         height: 100%;
+         background: #000;
+         opacity: 0.4;
+         z-index: 9999;
+         top: 0;
+         left: 0;
+         display: none;
+         }
+         .view-details-popup {
+         position: absolute;
+         width: 520px;
+         padding: 30px 20px;
+         background: #fff;
+         border-radius: 0%;
+         z-index: 9999;
+         top: 50%;
+         display: none;
+         left: 50%;
+         -ms-transform: translate(-50%, -50%);
+         -webkit-transform: translate(-50%, -50%);
+         transform: translate(-50%, -50%);
+         }
+         @media only screen and (max-width: 1023px) {
+         .view-details-popup {
+         width: 90%;
+         padding: 20px 10px;
+         }
+         }
+         .view-details-popup .text-block {
+         padding-bottom: 20px;
+         margin-bottom: 20px;
+         border-bottom: 1px solid #ddd;
+         }
+         .view-details-popup .text-block p.heading {
+         font-weight: 600;
+         font-size: 16px;
+         padding-bottom: 15px;
+         }
+         .view-details-popup .text-block p.mobile-number {
+         font-weight: 400;
+         font-size: 14px;
+         padding-bottom: 25px;
+         color: #000;
+         }
+         @media only screen and (max-width: 1023px) {
+         .view-details-popup .text-block p.mobile-number {
+         font-size: 12px;
+         }
+         }
+         .view-details-popup .text-block p.mobile-number label {
+         width: 110px;
+         font-weight: 400;
+         font-size: 14px;
+         display: inline-block;
+         color: #000;
+         }
+         @media only screen and (max-width: 1023px) {
+         .view-details-popup .text-block p.mobile-number label {
+         display: none;
+         }
+         }
+         .view-details-popup .text-block p.mobile-number label.show-xs {
+         display: none;
+         }
+         @media only screen and (max-width: 1023px) {
+         .view-details-popup .text-block p.mobile-number label.show-xs {
+         width: 20px;
+         font-weight: 400;
+         font-size: 14px;
+         display: inline-block;
+         color: #000;
+         }
+         }
+         .view-details-popup .text-block .copy {
+         font-size: 14px;
+         cursor: pointer;
+         color: #E40000;
+         border: 1px solid #E40000;
+         border-radius: 4px;
+         padding: 8px 0;
+         width: 70px;
+         text-align: center;
+         float: right;
+         margin-top: -10px;
+         }
+         @media only screen and (max-width: 1023px) {
+         .view-details-popup .text-block .copy {
+         font-size: 12px;
+         width: 50px;
+         padding: 5px 0;
+         margin-top: -4px;
+         }
+         }
+         .view-details-popup .text-block.no-border {
+         border: 0;
+         margin: 0;
+         }
+         .view-details-popup .close {
+         float: right;
+         cursor: pointer;
+         background: none;
+         color: #000;
+         font-size: 16px;
+         font-weight: 400;
+         padding: 0px;
+         border-radius: 4px;
+         margin-top: -15px;
+         }
+         @media only screen and (max-width: 1023px) {
+         .view-details-popup .close {
+         padding: 10px 35px;
+         }
+         }
+         input::-webkit-outer-spin-button,
+         input::-webkit-inner-spin-button {
+         -webkit-appearance: none;
+         margin: 0;
+         }
+         input[type="number"] {
+         -moz-appearance: textfield;
+         }
+         body {
+         font-family: "Nunito", sans-serif;
+         font-size: 14px;
+         font-weight: 400;
+         line-height: 18px;
+         color: #222;
+         }
+         ul {
+         list-style: none;
+         padding: 0;
+         margin: 0;
+         }
+         strong {
+         font-weight: 700;
+         }
+         a,
+         a:hover {
+         color: inherit;
+         }
+         .link {
+         text-decoration: underline;
+         color: #d91b2a;
+         }
+         .bg-white {
+         background-color: #fff;
+         }
+         .width100 {
+         width: 100%;
+         }
+         .width95 {
+         width: 95%;
+         }
+         .width90 {
+         width: 90%;
+         }
+         .width85 {
+         width: 85%;
+         }
+         .width80 {
+         width: 80%;
+         }
+         .width75 {
+         width: 75%;
+         }
+         .width70 {
+         width: 70%;
+         }
+         .width65 {
+         width: 65%;
+         }
+         .width60 {
+         width: 60%;
+         }
+         .width55 {
+         width: 55%;
+         }
+         .width50 {
+         width: 50%;
+         }
+         .width45 {
+         width: 45%;
+         }
+         .width40 {
+         width: 40%;
+         }
+         .width35 {
+         width: 35%;
+         }
+         .width30 {
+         width: 30%;
+         }
+         .width25 {
+         width: 25%;
+         }
+         .width20 {
+         width: 20%;
+         }
+         .width15 {
+         width: 15%;
+         }
+         .width10 {
+         width: 10%;
+         }
+         .width5 {
+         width: 5%;
+         }
+         .width0 {
+         width: 0%;
+         }
+         .width140 {
+         width: 140px;
+         }
+         .mtopauto {
+         margin-top: auto;
+         }
+         .marginbtm24 {
+         margin-bottom: 24px;
+         }
+         .marginleft8 {
+         margin-left: 8px;
+         }
+         .margin0 {
+         margin: 0 !important;
+         }
+         .f16 {
+         font-size: 16px;
+         }
+         .f12 {
+         font-size: 12px !important;
+         }
+         .p0 {
+         padding: 0 !important;
+         }
+         .mb0 {
+         margin-bottom: 0 !important;
+         }
+         .pos-rel {
+         position: relative;
+         }
+         .vscroll {
+         overflow: auto;
+         }
+         .vscroll.height350 {
+         height: 350px;
+         }
+         .vscroll.height215 {
+         height: 215px;
+         -ms-overflow-style: none;
+         }
+         .vscroll.height215::-webkit-scrollbar {
+         display: none
+         }
+         .d-flex {
+         display: -ms-flexbox;
+         display: flex;
+         -ms-flex-wrap: wrap;
+         flex-wrap: wrap;
+         }
+         .d-flex.jc-flex-end {
+         -ms-flex-pack: end;
+         justify-content: flex-end;
+         }
+         .d-flex.jc-space-between {
+         -ms-flex-pack: justify;
+         justify-content: space-between;
+         }
+         .d-flex.jc-space-around {
+         -ms-flex-pack: distribute;
+         justify-content: space-around;
+         }
+         .d-flex.jc-content-center {
+         -ms-flex-pack: center;
+         justify-content: center;
+         }
+         .d-flex.flex-wrap {
+         -ms-flex-wrap: wrap;
+         flex-wrap: wrap;
+         }
+         .d-flex.flex-nowrap {
+         -ms-flex-wrap: nowrap;
+         flex-wrap: nowrap;
+         }
+         .d-flex.d-col {
+         -ms-flex-direction: column;
+         flex-direction: column;
+         }
+         .d-flex.d-row {
+         -ms-flex-direction: row;
+         flex-direction: row;
+         }
+         .d-flex.ai-center {
+         -ms-flex-align: center;
+         align-items: center;
+         }
+         .d-flex.ai-flex-end {
+         -ms-flex-align: end;
+         align-items: flex-end;
+         }
+         .d-flex.flex-b60 {
+         -ms-flex-preferred-size: 60%;
+         flex-basis: 60%;
+         }
+         .d-flex.flex-b30 {
+         -ms-flex-preferred-size: 30%;
+         flex-basis: 30%;
+         }
+         .d-flex.fgrow1 {
+         -ms-flex-positive: 1;
+         flex-grow: 1;
+         }
+         .d-flex .flex1 {
+         -ms-flex: 1;
+         flex: 1;
+         }
+         .d-flex .jc-content-center {
+         -ms-flex-pack: center;
+         justify-content: center;
+         }
+         .d-flex .flex-shrink0 {
+         -ms-flex-negative: 0;
+         flex-shrink: 0;
+         }
+         .btn {
+         border-radius: 12px;
+         min-width: auto;
+         font-weight: 600;
+         line-height: 20px;
+         font-size: 12px;
+         padding: 6px 16px;
+         font-weight: 700;
+         background: #d91b2a;
+         letter-spacing: unset;
+         }
+         .btn.btn-sm {
+         font-size: 10px;
+         -ms-flex-align: center;
+         align-items: center;
+         padding: 4px 10px;
+         font-weight: 400;
+         text-transform: uppercase;
+         }
+         .btn.nobg {
+         background-color: transparent;
+         color: #d91b2a;
+         font-weight: 700;
+         }
+         .btn.border {
+         border: 1px solid #d91b2a;
+         }
+         .btn.grey {
+         color: #393939;
+         border: 1px solid #393939;
+         }
+         .btn.btn-block {
+         width: 100%;
+         }
+         .btn.select-state-btn {
+         background-color: #c5c5c5;
+         }
+         .btn.select-state-btn.selected {
+         background-color: #d91b2a;
+         }
+         .btn.select-search-btn {
+         background-color: #d91b2a;
+         }
+         .btn.select-search-btn.selected {
+         background-color: transparent;
+         color: #d91b2a;
+         border: 1px solid #d91b2a;
+         }
+         .btn.btn-green {
+         background-color: #1bb378;
+         }
+         .btn.btn-orange {
+         background-color: #fe7a38;
+         }
+         .btn .light {
+         font-weight: 400;
+         }
+         ::selection {
+         background: Highlight;
+         color: HighlightText;
+         }
+         .template_parent {
+         display: -ms-flexbox;
+         display: flex;
+         }
+         .template_parent .template-renderer-pane {
+         -ms-flex-positive: 1;
+         flex-grow: 1;
+         }
+         .template_parent .template-renderer-pane .template-title {
+         display: -ms-flexbox;
+         display: flex;
+         -ms-flex-pack: justify;
+         justify-content: space-between;
+         -ms-flex-align: center;
+         align-items: center;
+         color: #121212;
+         font-size: 14px;
+         font-weight: 800;
+         line-height: 30px;
+         margin-bottom: 16px;
+         }
+         .template_parent .template-renderer-pane .template-description {
+         padding-top: 32px;
+         color: #6c6c6c;
+         font-size: 14px;
+         font-weight: 400;
+         line-height: 22px;
+         margin-bottom: 32px;
+         }
+         .template_parent .template-renderer-pane .template-description>div {
+         padding-bottom: 24px;
+         }
+         .template_parent .template-renderer-pane .template-flowChart-container {
+         width: 100%;
+         height: calc(100vh - 123px);
+         overflow-y: auto;
+         }
+         .template_parent .template-renderer-pane .loader-wrap {
+         position: unset;
+         width: inherit;
+         height: inherit;
+         }
+         .dropDownHeader {
+         color: #121212;
+         font-size: 14px;
+         font-weight: 800;
+         line-height: 30px;
+         }
+         .horizontal-card {
+         min-width: 306px;
+         height: calc(100vh - 150px);
+         margin-right: 24px;
+         overflow: auto;
+         max-width: 306px ;
+         }
+         .horizontal-card.right-side {
+         margin-left: auto;
+         margin-right: 0;
+         }
+         .horizontal-card .bottom16 {
+         margin-bottom: 16px;
+         }
+         .horizontal-card .template-footer-msg {
+         -ms-flex-item-align: end;
+         align-self: flex-end;
+         }
+         .horizontal-card .template-footer-msg .custom-link {
+         color: #d91b2a;
+         padding-left: 0.25rem;
+         cursor: pointer;
+         }
+         .call-flow-template-wrap {
+         margin-bottom: 40px;
+         }
+         .call-flow-template-wrap:last-child {
+         margin-bottom: 0;
+         }
+         .call-flow-template-wrap .template-heading {
+         color: #989898;
+         font-size: 12px;
+         font-weight: 800;
+         line-height: 18px;
+         text-transform: uppercase;
+         margin-bottom: 8px;
+         font-family: "Nunito", sans-serif;
+         }
+         .call-flow-template-wrap .template-dropdown-wrap {
+         border-bottom: 1px solid #e7e7e7;
+         padding: 16px 0;
+         cursor: pointer;
+         }
+         .call-flow-template-wrap .template-dropdown-wrap:last-child {
+         border-bottom: 0;
+         }
+         .call-flow-template-wrap .template-dropdown-wrap.ptop0 {
+         padding-top: 0;
+         }
+         .call-flow-template-wrap .template-dropdown-wrap .template-dropdown .template-name {
+         color: #121212;
+         font-size: 16px;
+         font-weight: 800;
+         line-height: 24px;
+         font-family: "Nunito", "sans-serif";
+         }
+         .call-flow-template-wrap .template-dropdown-wrap .template-dropdown-list {
+         display: none;
+         }
+         .call-flow-template-wrap .template-dropdown-wrap .template-dropdown-list li {
+         display: -ms-flexbox;
+         display: flex;
+         color: #121212;
+         font-size: 14px;
+         font-weight: 400;
+         line-height: 22px;
+         font-family: "Nunito", "sans-serif";
+         margin-top: 12px;
+         margin-left: 8px;
+         transition: all 0.1s ease-in;
+         cursor: pointer;
+         }
+         .call-flow-template-wrap .template-dropdown-wrap .template-dropdown-list li:hover,
+         .call-flow-template-wrap .template-dropdown-wrap .template-dropdown-list li.active {
+         color: #121212;
+         font-size: 14px;
+         font-weight: 800;
+         line-height: 22px;
+         font-family: "Nunito", "sans-serif";
+         }
+         .call-flow-template-wrap .template-dropdown-wrap .template-dropdown-list .template-name {
+         -ms-flex: 1;
+         flex: 1;
+         -ms-flex-item-align: center;
+         align-self: center;
+         }
+         .call-flow-template-wrap .template-dropdown-wrap.active .template-dropdown {
+         padding: 0;
+         }
+         .call-flow-template-wrap .template-dropdown-wrap.active .template-dropdown .template-name {
+         color: #d91b2a;
+         font-family: "Nunito", "sans-serif";
+         }
+         .call-flow-template-wrap .template-dropdown-wrap.active .template-dropdown .template-num {
+         margin-left: 5px;
+         }
+         .call-flow-template-wrap .template-dropdown-wrap.active .template-dropdown .template-num img {
+         -webkit-transform: rotate(180deg);
+         -ms-transform: rotate(180deg);
+         transform: rotate(180deg);
+         }
+         .call-flow-template-wrap .template-dropdown-wrap.active .template-dropdown-list {
+         display: block;
+         }
+      </style>
+      <style>.tooltip {
+         position: relative;
+         }
+         .tooltip .tooltiptext {
+         visibility: hidden;
+         width: 120px;
+         background-color: #fff;
+         color: #6C6C6C;
+         text-align: center;
+         padding: 5px 0;
+         border-radius: 8px;
+         position: absolute;
+         z-index: 99999;
+         font-family: Nunito;
+         font-style: normal;
+         font-weight: normal;
+         font-size: 12px;
+         line-height: 20px;
+         box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
+         }
+         .tooltip span:before {
+         content: '';
+         display: block;
+         width: 0;
+         height: 0;
+         position: absolute;
+         border-top: 8px solid transparent;
+         border-bottom: 8px solid transparent;
+         border-right: 8px solid #fff;
+         }
+         .tooltip:hover .tooltiptext,
+         .tooltip:focus .tooltiptext {
+         visibility: visible;
+         }
+         .tooltip .pos-right {
+         left: 50px;
+         }
+         .tooltip span.pos-right:before {
+         left: -8px;
+         top: 6px;
+         }
+         .tooltip .pos-left {
+         right: 50px;
+         }
+         .tooltip span.pos-left:before {
+         -webkit-transform: rotate(180deg);
+         transform: rotate(180deg);
+         right: -8px;
+         }
+         .tooltip .pos-bottom-right {
+         top: 50px;
+         left: 10px;
+         }
+         .tooltip span.pos-bottom-right:before {
+         -webkit-transform: rotate(90deg);
+         transform: rotate(90deg);
+         left: 4px;
+         top: -10px;
+         }
+         .tooltip .pos-bottom-middle {
+         top: 50px;
+         right: -30px;
+         }
+         .tooltip span.pos-bottom-middle:before {
+         -webkit-transform: rotate(90deg);
+         transform: rotate(90deg);
+         left: 50%;
+         top: -10px;
+         }
+         .tooltip .pos-bottom-left {
+         top: 50px;
+         right: 10px;
+         }
+         .tooltip span.pos-bottom-left:before {
+         -webkit-transform: rotate(90deg);
+         transform: rotate(90deg);
+         right: 5px;
+         top: -10px;
+         }
+         .tooltip .pos-top-right {
+         top: -55px;
+         left: 4px;
+         }
+         .tooltip span.pos-top-right:before {
+         -webkit-transform: rotate(-90deg);
+         transform: rotate(-90deg);
+         left: 6px;
+         top: 41px;
+         }
+         .tooltip .pos-top-middle {
+         top: -55px;
+         right: -41px;
+         }
+         .tooltip span.pos-top-middle:before {
+         -webkit-transform: rotate(-90deg);
+         transform: rotate(-90deg);
+         left: 50%;
+         top: 41px;
+         }
+         .tooltip .pos-top-left {
+         top: -55px;
+         right: 0px;
+         }
+         .tooltip span.pos-top-left:before {
+         -webkit-transform: rotate(-90deg);
+         transform: rotate(-90deg);
+         right: 6px;
+         top: 41px;
+         }
+      </style>
+      <style>.tag {
+         display: inline-block;
+         background: #E5F4EE;
+         color: #04945d;
+         border-radius: 5px;
+         padding: 2px 5px;
+         margin-left: 5px;
+         height: -webkit-fit-content;
+         height: -moz-fit-content;
+         height: fit-content;
+         font-weight: 400
+         }
+         .tag.active {
+         background: #E5F4EE;
+         color: #04945d
+         }
+         .tag.inactive {
+         background: rgba(217, 27, 42, 0.05);
+         color: #D91B2A
+         }
+      </style>
+   </head>
+   <body class="body">
+      <div class="topbar wf-section">
+         <div class="topbarcontain">
+            <div class="w-hidden-medium w-hidden-small w-hidden-tiny w-row">
+               <div class="topbarleftcol w-column w-col-3">
+                  <!-- <img class="logo" style="height: 50px" src="assets/img/airtel.svg"> -->
+               </div>
+               <div class="w-column w-col-6">
+                  <div class="w-form">
+                     <form id="email-form" name="email-form" data-name="Email Form" method="get" class="form" aria-label="Email Form">
+                        <input type="text" class="searchbar w-input" maxlength="256" name="Searchxxx" data-name="Searchxxx" placeholder="Search by MSISDN,SIM Number,IMSI" id="Searchxxx">
+                     </form>
+                  </div>
+               </div>
+               <div class="topbarrightcolumn w-column w-col-3">
+                  <img class="feather" src="h:/cerberus/static/assets/icons/download.svg">
+                  <img class="feather" src="h:/cerberus/static/assets/icons/watch.svg">
+                  <img class="feather" src="h:/cerberus/static/assets/icons/user.svg">
+               </div>
+            </div>
+         </div>
+      </div>
+      <div class="section wf-section">
+         <div class="pagecontain">
+            <div class="div-block-6">
+               <div class="primary-menu-wrap">
+                  <div class="logo-wrap d-flex"><img class="smalllogo" src="h:/cerberus/static/assets/img/airtel.svg" alt="BrandLogo"></div>
+                  <div class="primarymenu-wrap">
+                     <div class="primarymenu above">
+                        <div class="tooltip" tabindex="0">
+                           <div class="primarymenu-icon active" id="section-1"><img src="data:image/svg+xml,%3Csvg width='24' height='24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M12.356 2.963a9.745 9.745 0 018.82 8.82M12.337 7.404a5.315 5.315 0 014.353 4.354' stroke='%23D91B2A' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M15.893 15.377c-.188 0-.384-.06-.572-.103a8.03 8.03 0 01-1.117-.333 1.701 1.701 0 00-2.116.855l-.187.385a10.394 10.394 0 01-2.27-1.71 10.418 10.418 0 01-1.706-2.277l.359-.24a1.71 1.71 0 00.853-2.12 8.858 8.858 0 01-.333-1.122 6.364 6.364 0 01-.102-.581 2.568 2.568 0 00-.888-1.54c-.47-.39-1.062-.6-1.672-.59H3.583a2.553 2.553 0 00-1.945.87 2.569 2.569 0 00-.614 2.047 16.274 16.274 0 004.639 9.464A16.19 16.19 0 0015.117 23h.324A2.555 2.555 0 0018 20.425v-2.567a2.572 2.572 0 00-.61-1.619 2.558 2.558 0 00-1.497-.862zm.426 5.133a.857.857 0 01-.617.824.893.893 0 01-.372.032A14.486 14.486 0 016.895 17.2a14.56 14.56 0 01-4.114-8.48.935.935 0 01.214-.7.853.853 0 01.64-.292h2.559a.851.851 0 01.853.676c.034.234.076.465.128.693.098.451.23.895.392 1.327l-1.194.556a.852.852 0 00-.497.812.857.857 0 00.079.325 12.379 12.379 0 005.971 5.99c.208.085.44.085.649 0a.852.852 0 00.486-.446l.529-1.197c.44.158.89.29 1.348.393.227.052.457.094.69.128a.852.852 0 01.674.856l.017 2.67z' fill='%23121212'/%3E%3C/svg%3E" alt="Voice"></div>
+                           <span class="tooltiptext pos-right">
+                              <div>Voice</div>
+                           </span>
+                        </div>
+                     </div>
+                     <div class="primarymenu below">
+                        <div class="topbarleftcolumn w-col">
+                           <img class="feather" src="h:/cerberus/static/assets/icons/user.svg">
+                           <img class="feather" src="h:/cerberus/static/assets/icons/download.svg">
+                           <img class="feather" src="h:/cerberus/static/assets/icons/watch.svg">
+                           <img class="feather" src="h:/cerberus/static/assets/icons/log-out.svg">
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <div class="left-panel-wrap bg-white menubar-tooltipJourney undefined smallmenu">
+                  <div class="menu-toggle-arrow"><img class="feather" src="h:/cerberus/static/assets/icons/arrow-left.svg" alt="ArrowLeft">
+                  </div>
+                  <div class="leftmenucontain">
+                     <a href="#" class="leftmenulink w-inline-block">
+                        <div class="w-row">
+                           <div class="w-col w-col-2">
+                              <div class="intext">i</div>
+                           </div>
+                           <div class="w-col w-col-2">
+                              <div class="icontectleft">G</div>
+                           </div>
+                           <div class="w-col w-col-8">
+                              <div class="leftlinktext">Overview</div>
+                           </div>
+                        </div>
+                     </a>
+                     <a href="#" class="leftmenulink w-inline-block">
+                        <div class="w-row">
+                           <div class="w-col w-col-2">
+                              <div class="intext">i</div>
+                           </div>
+                           <div class="w-col w-col-2">
+                              <div class="icontectleft">z</div>
+                           </div>
+                           <div class="w-col w-col-8">
+                              <div class="leftlinktext">Reservation</div>
+                           </div>
+                        </div>
+                     </a>
+                     <a href="#" class="leftmenulink currentlinkleft w-inline-block">
+                        <div class="w-row">
+                           <div class="w-col w-col-2">
+                              <div class="intext">i</div>
+                           </div>
+                           <div class="w-col w-col-2">
+                              <div class="icontectleft">x</div>
+                           </div>
+                           <div class="w-col w-col-8">
+                              <div class="leftlinktext">Meeting</div>
+                           </div>
+                        </div>
+                     </a>
+                     <a href="#" class="leftmenulink w-inline-block">
+                        <div class="w-row">
+                           <div class="w-col w-col-2">
+                              <div class="intext">i</div>
+                           </div>
+                           <div class="w-col w-col-2">
+                              <div class="icontectleft">A</div>
+                           </div>
+                           <div class="w-col w-col-8">
+                              <div class="leftlinktext">Customers</div>
+                           </div>
+                        </div>
+                     </a>
+                     <a href="#" class="leftmenulink w-inline-block">
+                        <div class="w-row">
+                           <div class="w-col w-col-2">
+                              <div class="intext">i</div>
+                           </div>
+                           <div class="w-col w-col-2">
+                              <div class="icontectleft">B</div>
+                           </div>
+                           <div class="w-col w-col-8">
+                              <div class="leftlinktext">Ticket</div>
+                           </div>
+                        </div>
+                     </a>
+                     <a href="#" class="leftmenulink w-inline-block">
+                        <div class="w-row">
+                           <div class="w-col w-col-2">
+                              <div class="intext">i</div>
+                           </div>
+                           <div class="w-col w-col-2">
+                              <div class="icontectleft">C</div>
+                           </div>
+                           <div class="w-col w-col-8">
+                              <div class="leftlinktext">Support</div>
+                           </div>
+                        </div>
+                     </a>
+                     <a href="#" class="leftmenulink w-inline-block">
+                        <div class="w-row">
+                           <div class="w-col w-col-2">
+                              <div class="intext">i</div>
+                           </div>
+                           <div class="w-col w-col-2">
+                              <div class="icontectleft">D</div>
+                           </div>
+                           <div class="w-col w-col-8">
+                              <div class="leftlinktext">Profile</div>
+                           </div>
+                        </div>
+                     </a>
+                     <a href="#" class="leftmenulink leftlogout w-inline-block">
+                        <div class="w-row">
+                           <div class="w-col w-col-2">
+                              <div class="intext">i</div>
+                           </div>
+                           <div class="w-col w-col-2">
+                              <div class="icontectleft">F</div>
+                           </div>
+                           <div class="w-col w-col-8">
+                              <div class="leftlinktext">Log Out</div>
+                           </div>
+                        </div>
+                     </a>
+                  </div>
+               </div>
+              
+           <div class="div-block-7 w-clearfix"> 
+                  <h1 class="meetingsh1">Meetings</h1>
+                  <div class="topdashbar">
+                     <div class="stathold">
+                        <div class="statrow w-row">
+                           <div class="leftcolstat w-col w-col-4 w-col-stack">
+                              <div class="circlewicon nomeetingsicon"></div>
+                           </div>
+                           <div class="column-7 w-col w-col-8 w-col-stack">
+                              <div class="topdashbartext">Number of Meetings</div>
+                              <div class="topdashbartext number">36</div>
+                              <div class="topdashbartext number desctext">This Month</div>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="stathold">
+                        <div class="statrow w-row">
+                           <div class="w-col w-col-4 w-col-stack">
+                              <div class="circlewicon rescheduleicon"></div>
+                           </div>
+                           <div class="column-8 w-col w-col-8 w-col-stack">
+                              <div class="topdashbartext">Rescheduled Meetings</div>
+                              <div class="topdashbartext number">14</div>
+                              <div class="topdashbartext number desctext">This Month</div>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="stathold laststat bottomlaststat">
+                        <div class="statrow statlastbottom w-row">
+                           <div class="w-col w-col-4 w-col-stack">
+                              <div class="circlewicon cancelledmeetings"></div>
+                           </div>
+                           <div class="column-9 w-col w-col-8 w-col-stack">
+                              <div class="topdashbartext">Cancelled Meetings</div>
+                              <div class="topdashbartext number">20</div>
+                              <div class="topdashbartext number desctext">This Month</div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="numberofmeetings">Today - 6 Meetings</div>
+                  <div data-ix="meetingdetail1" class="meetingdetailcontain float-left" style="opacity: 1; transform: translateX(0px) translateY(0px) translateZ(0px); transition: opacity 400ms ease 0s, transform 400ms ease 0s;">
+                     <div class="meetingdetailtopdiv">
+                        <div class="w-row">
+                           <div class="column-10 w-col w-col-5">
+                              <div class="meetingimgdiv"></div>
+                           </div>
+                           <div class="w-col w-col-7">
+                              <div class="meetingtitle">Design Catchup</div>
+                              <div class="meetingtitle meetingemail">adellac@josianne.com</div>
+                              <div class="meetingtitle meetingemail meetingtime w-hidden-small w-hidden-tiny">10:30 AM</div>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="meetingdetailmiddlediv">
+                        <div class="w-hidden-small w-hidden-tiny w-row">
+                           <div class="w-col w-col-6">
+                              <div class="goingtext">9 Members Going</div>
+                           </div>
+                           <div class="w-col w-col-6">
+                              <div class="goingtext notgoing">2 Pending</div>
+                           </div>
+                        </div>
+                        <div class="div-block-5">
+                           <div class="w-hidden-small w-hidden-tiny w-row">
+                              <div class="attendcol w-col w-col-6">
+                                 <div class="div-block-4">
+                                    <div tooltipster="bottom-delay" class="attendeediv attend1 tooltipstered"></div>
+                                    <div tooltipster="bottom-delay" class="attendeediv attend1 attendplu attend2 tooltipstered"></div>
+                                    <div tooltipster="bottom-delay" class="attendeediv attend1 attendplu attend3 tooltipstered"></div>
+                                    <div tooltipster="bottom-delay" class="attendeediv attend1 attendplu attend4 tooltipstered"></div>
+                                 </div>
+                              </div>
+                              <div class="column-11 w-col w-col-6">
+                                 <div class="plusnumore">+5 More</div>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="w-hidden-main w-hidden-medium w-row">
+                           <div class="column-25 w-col w-col-4 w-col-small-6 w-col-tiny-6">
+                              <div tooltipster="bottom-delay" class="attendeediv attend1 tooltipstered"></div>
+                              <div tooltipster="bottom-delay" class="attendeediv attend1 attendplu attend2 tooltipstered"></div>
+                              <div tooltipster="bottom-delay" class="attendeediv attend1 attendplu attend3 tooltipstered"></div>
+                              <div tooltipster="bottom-delay" class="attendeediv attend1 attendplu attend4 tooltipstered"></div>
+                              <div class="plusnumore w-hidden-main w-hidden-medium">+5 More</div>
+                           </div>
+                           <div class="column-26 w-col w-col-8 w-col-small-6 w-col-tiny-6">
+                              <div class="goingtext">9 Members Going</div>
+                              <div class="goingtext notgoing">2 Pending</div>
+                           </div>
+                        </div>
+                     </div>
+                     <a href="#" class="bottommorelink w-hidden-main w-hidden-medium w-inline-block">
+                        <div class="detailscallinktext">10:30 AM</div>
+                     </a>
+                     <a href="#" class="bottommorelink bottommoreright w-inline-block">
+                        <div class="detailscallinktext">View Details</div>
+                     </a>
+                  </div>
+                  <div data-ix="meetingdetail-2" class="meetingdetailcontain float-left" style="opacity: 1; transform: translateX(0px) translateY(0px) translateZ(0px); transition: opacity 400ms ease 0s, transform 400ms ease 0s;">
+                     <div class="meetingdetailtopdiv">
+                        <div class="w-row">
+                           <div class="w-col w-col-5">
+                              <div class="meetingimgdiv meeting2"></div>
+                           </div>
+                           <div class="w-col w-col-7">
+                              <div class="meetingtitle">Sales Presentation</div>
+                              <div class="meetingtitle meetingemail">adams_ka@gmail.com</div>
+                              <div class="meetingtitle meetingemail meetingtime w-hidden-small w-hidden-tiny">11:30 AM</div>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="meetingdetailmiddlediv">
+                        <div class="w-hidden-small w-hidden-tiny w-row">
+                           <div class="w-col w-col-6">
+                              <div class="goingtext">9 Members Going</div>
+                           </div>
+                           <div class="w-col w-col-6">
+                              <div class="goingtext notgoing">3 Not Joining</div>
+                           </div>
+                        </div>
+                        <div class="div-block-5">
+                           <div class="w-hidden-small w-hidden-tiny w-row">
+                              <div class="attendcol w-col w-col-6">
+                                 <div class="div-block-4">
+                                    <div tooltipster="bottom-delay" class="attendeediv attend1 attend6 tooltipstered"></div>
+                                    <div tooltipster="bottom-delay" class="attendeediv attend1 attendplu attend5 tooltipstered"></div>
+                                    <div tooltipster="bottom-delay" class="attendeediv attend1 attendplu attend3 tooltipstered"></div>
+                                    <div tooltipster="bottom-delay" class="attendeediv attend1 attendplu attend7 tooltipstered"></div>
+                                 </div>
+                              </div>
+                              <div class="column-12 w-col w-col-6">
+                                 <div class="plusnumore">+5 More</div>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="w-hidden-main w-hidden-medium w-row">
+                           <div class="column-27 w-col w-col-4 w-col-small-6 w-col-tiny-6">
+                              <div tooltipster="bottom-delay" class="attendeediv attend1 attend6 tooltipstered"></div>
+                              <div tooltipster="bottom-delay" class="attendeediv attend1 attendplu attend5 tooltipstered"></div>
+                              <div tooltipster="bottom-delay" class="attendeediv attend1 attendplu attend3 tooltipstered"></div>
+                              <div tooltipster="bottom-delay" class="attendeediv attend1 attendplu attend7 tooltipstered"></div>
+                              <div class="plusnumore w-hidden-main w-hidden-medium">+5 More</div>
+                           </div>
+                           <div class="column-28 w-col w-col-8 w-col-small-6 w-col-tiny-6">
+                              <div class="goingtext">9 Members Going</div>
+                              <div class="goingtext notgoing">3 Not Joining</div>
+                           </div>
+                        </div>
+                     </div>
+                     <a href="#" class="bottommorelink w-hidden-main w-hidden-medium w-inline-block">
+                        <div class="detailscallinktext">11:30 AM</div>
+                     </a>
+                     <a href="#" class="bottommorelink bottommoreright w-inline-block">
+                        <div class="detailscallinktext">View Details</div>
+                     </a>
+                  </div>
+                  <div data-ix="meetingdetail-3" class="meetingdetailcontain float-left" style="opacity: 1; transform: translateX(0px) translateY(0px) translateZ(0px); transition: opacity 400ms ease 0s, transform 400ms ease 0s;">
+                     <div class="meetingdetailtopdiv">
+                        <div class="w-row">
+                           <div class="w-col w-col-5">
+                              <div class="meetingimgdiv meeting3"></div>
+                           </div>
+                           <div class="w-col w-col-7">
+                              <div class="meetingtitle">Daily Meeting</div>
+                              <div class="meetingtitle meetingemail">johnson.eva@santos.com</div>
+                              <div class="meetingtitle meetingemail meetingtime w-hidden-small w-hidden-tiny">12:00 PM</div>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="meetingdetailmiddlediv">
+                        <div class="w-hidden-small w-hidden-tiny w-row">
+                           <div class="w-col w-col-6">
+                              <div class="goingtext">5 Members Going</div>
+                           </div>
+                           <div class="w-col w-col-6">
+                              <div class="goingtext notgoing">5 Pending</div>
+                           </div>
+                        </div>
+                        <div class="div-block-5">
+                           <div class="w-hidden-small w-hidden-tiny w-row">
+                              <div class="attendcol w-col w-col-6">
+                                 <div class="div-block-4">
+                                    <div tooltipster="bottom-delay" class="attendeediv attend1 attend7 tooltipstered"></div>
+                                    <div tooltipster="bottom-delay" class="attendeediv attend1 attendplu attend8 tooltipstered"></div>
+                                    <div tooltipster="bottom-delay" class="attendeediv attend1 attendplu attend9 tooltipstered"></div>
+                                    <div tooltipster="bottom-delay" class="attendeediv attend1 attendplu attend4 tooltipstered"></div>
+                                 </div>
+                              </div>
+                              <div class="column-13 w-col w-col-6">
+                                 <div class="plusnumore">+1 More</div>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="w-hidden-main w-hidden-medium w-row">
+                           <div class="column-30 w-col w-col-4 w-col-small-6 w-col-tiny-6">
+                              <div tooltipster="bottom-delay" class="attendeediv attend1 attend7 tooltipstered"></div>
+                              <div tooltipster="bottom-delay" class="attendeediv attend1 attendplu attend8 tooltipstered"></div>
+                              <div tooltipster="bottom-delay" class="attendeediv attend1 attendplu attend9 tooltipstered"></div>
+                              <div tooltipster="bottom-delay" class="attendeediv attend1 attendplu attend4 tooltipstered"></div>
+                              <div class="plusnumore w-hidden-main w-hidden-medium">+1 More</div>
+                           </div>
+                           <div class="column-29 w-col w-col-8 w-col-small-6 w-col-tiny-6">
+                              <div class="goingtext">5 Members Going</div>
+                              <div class="goingtext notgoing">5 Pending</div>
+                           </div>
+                        </div>
+                     </div>
+                     <a href="#" class="bottommorelink w-hidden-main w-hidden-medium w-inline-block">
+                        <div class="detailscallinktext">12:00 PM</div>
+                     </a>
+                     <a href="#" class="bottommorelink bottommoreright w-inline-block">
+                        <div class="detailscallinktext">View Details</div>
+                     </a>
+                  </div>
+                  <div data-ix="meetingdetail-4" class="meetingdetailcontain float-left" style="opacity: 1; transform: translateX(0px) translateY(0px) translateZ(0px); transition: opacity 400ms ease 0s, transform 400ms ease 0s;">
+                     <div class="meetingdetailtopdiv">
+                        <div class="w-row">
+                           <div class="w-col w-col-5">
+                              <div class="meetingimgdiv meeting4"></div>
+                           </div>
+                           <div class="w-col w-col-7">
+                              <div class="meetingtitle">Testing Vol. 1</div>
+                              <div class="meetingtitle meetingemail">amde@egament.com</div>
+                              <div class="meetingtitle meetingemail meetingtime w-hidden-small w-hidden-tiny">2:30 PM</div>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="meetingdetailmiddlediv">
+                        <div class="w-hidden-small w-hidden-tiny w-row">
+                           <div class="w-col w-col-6">
+                              <div class="goingtext">7 Members Going</div>
+                           </div>
+                           <div class="w-col w-col-6">
+                              <div class="goingtext notgoing">2 Pending</div>
+                           </div>
+                        </div>
+                        <div class="div-block-5">
+                           <div class="w-hidden-small w-hidden-tiny w-row">
+                              <div class="attendcol w-col w-col-6">
+                                 <div class="div-block-4">
+                                    <div tooltipster="bottom-delay" class="attendeediv attend1 attend10 tooltipstered"></div>
+                                    <div tooltipster="bottom-delay" class="attendeediv attend1 attendplu tooltipstered"></div>
+                                    <div tooltipster="bottom-delay" class="attendeediv attend1 attendplu attend2 tooltipstered"></div>
+                                    <div tooltipster="bottom-delay" class="attendeediv attend1 attendplu attend8 tooltipstered"></div>
+                                 </div>
+                              </div>
+                              <div class="column-14 w-col w-col-6">
+                                 <div class="plusnumore">+3 More</div>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="w-hidden-main w-hidden-medium w-row">
+                           <div class="column-31 w-col w-col-4 w-col-small-6 w-col-tiny-6">
+                              <div tooltipster="bottom-delay" class="attendeediv attend1 attend10 tooltipstered"></div>
+                              <div tooltipster="bottom-delay" class="attendeediv attend1 attendplu tooltipstered"></div>
+                              <div tooltipster="bottom-delay" class="attendeediv attend1 attendplu attend2 tooltipstered"></div>
+                              <div tooltipster="bottom-delay" class="attendeediv attend1 attendplu attend8 tooltipstered"></div>
+                              <div class="plusnumore plus2 w-hidden-main w-hidden-medium">+3 More</div>
+                           </div>
+                           <div class="column-32 w-col w-col-8 w-col-small-6 w-col-tiny-6">
+                              <div class="goingtext">7 Members Going</div>
+                              <div class="goingtext notgoing">2 Pending</div>
+                           </div>
+                        </div>
+                     </div>
+                     <a href="#" class="bottommorelink w-hidden-main w-hidden-medium w-inline-block">
+                        <div class="detailscallinktext">2:30 PM</div>
+                     </a>
+                     <a href="#" class="bottommorelink bottommoreright w-inline-block">
+                        <div class="detailscallinktext">View Details</div>
+                     </a>
+                  </div>
+                  <div data-ix="meetingdetail-5" class="meetingdetailcontain float-left" style="opacity: 1; transform: translateX(0px) translateY(0px) translateZ(0px); transition: opacity 400ms ease 0s, transform 400ms ease 0s;">
+                     <div class="meetingdetailtopdiv">
+                        <div class="w-row">
+                           <div class="w-col w-col-5">
+                              <div class="meetingimgdiv meeting5"></div>
+                           </div>
+                           <div class="w-col w-col-7">
+                              <div class="meetingtitle">Collaboration</div>
+                              <div class="meetingtitle meetingemail">cadu@egament.com</div>
+                              <div class="meetingtitle meetingemail meetingtime w-hidden-small w-hidden-tiny">5:30 PM</div>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="meetingdetailmiddlediv">
+                        <div class="w-hidden-small w-hidden-tiny w-row">
+                           <div class="w-col w-col-6">
+                              <div class="goingtext">5 Members Going</div>
+                           </div>
+                           <div class="w-col w-col-6">
+                              <div class="goingtext notgoing">8 Pending</div>
+                           </div>
+                        </div>
+                        <div class="w-hidden-small w-hidden-tiny w-row">
+                           <div class="attendcol w-col w-col-6">
+                              <div class="div-block-4">
+                                 <div tooltipster="bottom-delay" class="attendeediv attend1 attend6 tooltipstered"></div>
+                                 <div tooltipster="bottom-delay" class="attendeediv attend1 attendplu tooltipstered"></div>
+                                 <div tooltipster="bottom-delay" class="attendeediv attend1 attendplu attend2 tooltipstered"></div>
+                                 <div tooltipster="bottom-delay" class="attendeediv attend1 attendplu attend8 tooltipstered"></div>
+                              </div>
+                           </div>
+                           <div class="column-14 w-col w-col-6">
+                              <div class="plusnumore">+1 More</div>
+                           </div>
+                        </div>
+                        <div class="w-hidden-main w-hidden-medium w-row">
+                           <div class="column-33 w-col w-col-4 w-col-small-6 w-col-tiny-6">
+                              <div tooltipster="bottom-delay" class="attendeediv attend1 attend6 tooltipstered"></div>
+                              <div tooltipster="bottom-delay" class="attendeediv attend1 attendplu tooltipstered"></div>
+                              <div tooltipster="bottom-delay" class="attendeediv attend1 attendplu attend2 tooltipstered"></div>
+                              <div tooltipster="bottom-delay" class="attendeediv attend1 attendplu attend8 tooltipstered"></div>
+                              <div class="plusnumore w-hidden-main w-hidden-medium">+1 More</div>
+                           </div>
+                           <div class="column-34 w-col w-col-8 w-col-small-6 w-col-tiny-6">
+                              <div class="goingtext">5 Members Going</div>
+                              <div class="goingtext notgoing">8 Pending</div>
+                           </div>
+                        </div>
+                     </div>
+                     <a href="#" class="bottommorelink w-hidden-main w-hidden-medium w-inline-block">
+                        <div class="detailscallinktext">5:30 PM</div>
+                     </a>
+                     <a href="#" class="bottommorelink bottommoreright w-inline-block">
+                        <div class="detailscallinktext">View Details</div>
+                     </a>
+                  </div>
+                  <div data-ix="meetingdetail-6" class="meetingdetailcontain float-left" style="opacity: 1; transform: translateX(0px) translateY(0px) translateZ(0px); transition: opacity 400ms ease 0s, transform 400ms ease 0s;">
+                     <div class="meetingdetailtopdiv">
+                        <div class="w-row">
+                           <div class="w-col w-col-5">
+                              <div class="meetingimgdiv meeting6"></div>
+                           </div>
+                           <div class="w-col w-col-7">
+                              <div class="meetingtitle">Tech Talk</div>
+                              <div class="meetingtitle meetingemail">luni@egament.com</div>
+                              <div class="meetingtitle meetingemail meetingtime w-hidden-small w-hidden-tiny">6:00 PM</div>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="meetingdetailmiddlediv">
+                        <div class="w-hidden-small w-hidden-tiny w-row">
+                           <div class="w-col w-col-6">
+                              <div class="goingtext">9 Members Going</div>
+                           </div>
+                           <div class="w-col w-col-6">
+                              <div class="goingtext notgoing">8 Pending</div>
+                           </div>
+                        </div>
+                        <div class="div-block-5">
+                           <div class="w-hidden-small w-hidden-tiny w-row">
+                              <div class="attendcol w-col w-col-6">
+                                 <div class="div-block-4">
+                                    <div tooltipster="bottom-delay" class="attendeediv attend1 attend10 tooltipstered"></div>
+                                    <div tooltipster="bottom-delay" class="attendeediv attend1 attendplu attend7 tooltipstered"></div>
+                                    <div tooltipster="bottom-delay" class="attendeediv attend1 attendplu attend5 tooltipstered"></div>
+                                    <div tooltipster="bottom-delay" class="attendeediv attend1 attendplu attend9 tooltipstered"></div>
+                                 </div>
+                              </div>
+                              <div class="column-15 w-col w-col-6">
+                                 <div class="plusnumore">+5 More</div>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="w-hidden-main w-hidden-medium w-row">
+                           <div class="column-35 w-col w-col-4 w-col-small-6 w-col-tiny-6">
+                              <div tooltipster="bottom-delay" class="attendeediv attend1 attend10 tooltipstered"></div>
+                              <div tooltipster="bottom-delay" class="attendeediv attend1 attendplu attend7 tooltipstered"></div>
+                              <div tooltipster="bottom-delay" class="attendeediv attend1 attendplu attend5 tooltipstered"></div>
+                              <div tooltipster="bottom-delay" class="attendeediv attend1 attendplu attend9 tooltipstered"></div>
+                              <div class="plusnumore plus3 w-hidden-main w-hidden-medium">+5 More</div>
+                           </div>
+                           <div class="column-36 w-col w-col-8 w-col-small-6 w-col-tiny-6">
+                              <div class="goingtext">9 Members Going</div>
+                              <div class="goingtext notgoing">8 Pending</div>
+                           </div>
+                        </div>
+                        <div class="w-hidden-main w-hidden-medium w-row">
+                           <div class="attendcol w-hidden-small w-hidden-tiny w-col w-col-6">
+                              <div class="div-block-4">
+                                 <div tooltipster="bottom-delay" class="attendeediv attend1 attend10 tooltipstered"></div>
+                                 <div tooltipster="bottom-delay" class="attendeediv attend1 attendplu attend7 tooltipstered"></div>
+                                 <div tooltipster="bottom-delay" class="attendeediv attend1 attendplu attend5 tooltipstered"></div>
+                                 <div tooltipster="bottom-delay" class="attendeediv attend1 attendplu attend9 tooltipstered"></div>
+                              </div>
+                           </div>
+                           <div class="column-15 w-hidden-small w-hidden-tiny w-col w-col-6"></div>
+                        </div>
+                     </div>
+                     <a href="#" class="bottommorelink w-hidden-main w-hidden-medium w-inline-block">
+                        <div class="detailscallinktext">6:00 PM</div>
+                     </a>
+                     <a href="#" class="bottommorelink bottommoreright w-inline-block">
+                        <div class="detailscallinktext">View Details</div>
+                     </a>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <script>
+         /* Loop through all dropdown buttons to toggle between hiding and showing its dropdown content - This allows the user to have multiple dropdowns without any conflict */
+         var dropdown = document.getElementsByClassName("template-dropdown-wrap");
+         var i;
+         
+         for (i = 0; i < dropdown.length; i++) {
+           dropdown[i].addEventListener("click", function() {
+             this.classList.toggle("active");
+             var dropdownContent = this.nextElementSibling;
+             if (dropdownContent.style.display === "block") {
+               dropdownContent.style.display = "none";
+             } else {
+               dropdownContent.style.display = "block";
+             }
+           });
+         }
+         
+         
+      </script>
+   </body>
+</html>

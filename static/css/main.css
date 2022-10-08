@@ -78,6 +78,7 @@ html {
 
 #form-title{
     color: #fff;
+    margin: 0;
     
 }
 
@@ -99,17 +100,24 @@ html {
 }
 .input-group-text {
     background: #f7ba5b !important;
-    color: whitesmoke !important;
+    color: white !important;
     border: 0 !important;
     padding: 0.75rem 0.75rem !important;
     border-radius: 0.25rem 0 0 0.25rem !important;
-}
-.input_user,
-.input_pass:focus {
-    box-shadow: none !important;
-    outline: 0px !important;
+   
 }
 
+.input_user, .form-control,
+.input_pass:focus {
+    box-shadow: none !important;
+    border: none !important;
+    outline: 0px !important;
+}
+.input-register-text{
+    color: #212529;
+    height: auto;
+    border-radius: 0 0.25rem 0.25rem 0 !important;
+}
 #messages{
     background-color: grey;
     color: #fff;
@@ -133,10 +141,19 @@ html {
     align-items: center;
     margin: 0 1em;
 }
-
-.loginwithgoogle{
-  display: flex;
-  justify-content: center;
-  margin-top: 1%;
-  
+select {
+    word-wrap: normal;
+    height: 30px;
 }
+label {
+    display: inline-block;
+    margin: 0.5rem;
+    PADDING: 0 .2EM;
+}
+.loginwithgoogle{
+    display: flex;
+    justify-content: center;
+    margin-top: 1%;
+}
+
+
